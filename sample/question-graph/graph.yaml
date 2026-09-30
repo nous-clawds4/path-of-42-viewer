@@ -1,0 +1,9 @@
+# Graph-level metadata (optional file). Not a node.
+title: Observer-space framework (SAMPLE)
+sample: true
+note: >-
+  Node names are drawn from real framework decisions, but the graph
+  structure, synopses and every q / a value are illustrative placeholders, not
+  rulings. This is not the physics pilot's retro-mapping of v0.3 to v0.7.1.
+# Optional: base URL used to link each node to its source file.
+source_base_url: https://github.com/nous-clawds4/path-of-42-viewer/blob/main/sample/question-graph/

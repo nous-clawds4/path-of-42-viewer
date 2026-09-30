@@ -1,0 +1,17 @@
+id: a-vstar
+type: answer
+title: V*
+synopsis: The V* construction, pressure-tested under Option F.
+parents: [q-vstar]
+status: rejected
+hold: L3
+tag: math-tool
+rationale: Superseded by V^τ (banners, #134).
+reopen_if: SAMPLE placeholder, to be written by whoever rules on this node.
+q: 0.8
+a: 0.2
+sources:
+  - label: "physics#106: V* extend-vs-not"
+    url: https://github.com/nous-clawds4/physics/pull/106
+  - label: "physics#134: V* superseded by V^tau"
+    url: https://github.com/nous-clawds4/physics/pull/134

@@ -1,0 +1,9 @@
+id: q-detector-variable
+type: question
+title: Which variable meets detector statistics?
+synopsis: Which variable is associated with the relative probabilities of a particle arriving at each of several detectors?
+parents: [a-branch-points]
+hold: L3
+sources:
+  - label: path-of-42.md §1 (the one planned physical hypothesis)
+    url: https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#1-structure-a-graph-not-layers

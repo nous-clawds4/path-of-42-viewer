@@ -1,0 +1,9 @@
+id: q-vstar
+type: question
+title: V* or V^τ?
+synopsis: Under Option F, which vertex construction does the framework use?
+parents: [a-option-f]
+hold: L3
+sources:
+  - label: "physics#106: V* extend-vs-not under Option F"
+    url: https://github.com/nous-clawds4/physics/pull/106

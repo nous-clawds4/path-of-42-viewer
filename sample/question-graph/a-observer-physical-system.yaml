@@ -1,0 +1,12 @@
+id: a-observer-physical-system
+type: answer
+title: The observer as a physical system
+synopsis: Root. The observer is a physical system inside the theory, of the same kind as everything else physics describes.
+parents: []
+status: accepted
+hold: L0
+sources:
+  - label: path-of-42.md §7 (seed example)
+    url: https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics
+  - label: Statement of the Problem v0.5 (wds4/physics@047ba165)
+    url: https://github.com/wds4/physics/blob/047ba165389ceeb1ea778dd1ffdf4d89a535a62c/public-essays/statement-of-the-problem/versions/v0.5.md

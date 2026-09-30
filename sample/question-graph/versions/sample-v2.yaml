@@ -1,0 +1,4 @@
+id: sample-v2
+title: Sample version 2 (SAMPLE)
+synopsis: Illustrative selection only, not a real paper version.
+selects: [a-no-privileged-matter, a-obs-set-of-lumps, a-branch-points, a-option-f, a-vtau]

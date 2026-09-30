@@ -1,0 +1,9 @@
+id: q-weight-evolutions
+type: question
+title: Which weight on evolutions?
+synopsis: Which measure weights evolutions at a cut? Two parents, so its h uses the weaker one.
+parents: [a-branch-points, a-obs-set-of-lumps]
+hold: L3
+sources:
+  - label: reviews/born-rule-readiness.md (#159)
+    url: https://github.com/nous-clawds4/physics/pull/159

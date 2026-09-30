@@ -1,0 +1,16 @@
+id: a-branch-points
+type: answer
+title: Branch points / choice points
+synopsis: Describe branching by branch points (choice points) in a tree of evolutions.
+parents: [q-describe-branching]
+status: accepted
+hold: L2
+tag: definition
+rationale: SAMPLE placeholder.
+q: 0.95
+a: 0.8
+sources:
+  - label: Mathematical Foundations essay v0.3 ("branch points, or choice points")
+    url: https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/versions/v0.3.md
+  - label: reviews/born-rule-readiness.md
+    url: https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness.md

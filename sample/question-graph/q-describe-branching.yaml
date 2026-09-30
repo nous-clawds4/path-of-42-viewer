@@ -1,0 +1,6 @@
+id: q-describe-branching
+type: question
+title: How is branching described?
+synopsis: What structure carries the branching of histories?
+parents: [a-observer-physical-system]
+hold: L2

@@ -1,0 +1,17 @@
+id: a-everett-worlds
+type: answer
+title: Everett worlds
+synopsis: Describe branching as Everettian worlds.
+parents: [q-describe-branching]
+status: rejected
+hold: L2
+tag: definition
+rationale: >-
+  observer-space-ontology.md states that the framework is not Everettian
+  quantum mechanics.
+reopen_if: SAMPLE placeholder, to be written by whoever rules on this node.
+q: 0.95
+a: 0.2
+sources:
+  - label: papers/observer-space-ontology.md
+    url: https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md

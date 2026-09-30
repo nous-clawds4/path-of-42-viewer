@@ -1,0 +1,16 @@
+id: a-option-f
+type: answer
+title: Option F
+synopsis: Ontology's Option F, adopted as the working in-house C^k join law.
+parents: [q-ck-join-law]
+status: accepted
+hold: L3
+tag: math-tool
+rationale: Adopted by David on 2026-09-07 as the working in-house join law (#104).
+q: 0.8
+a: 0.8
+sources:
+  - label: "physics#103: Ontology proposal, Option F"
+    url: https://github.com/nous-clawds4/physics/pull/103
+  - label: "physics#104: Adopt Option F"
+    url: https://github.com/nous-clawds4/physics/pull/104

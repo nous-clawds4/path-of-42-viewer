@@ -1,0 +1,6 @@
+id: q-ck-join-law
+type: question
+title: Which C^k join law?
+synopsis: Which join law for piecewise C^k graph joins?
+parents: [a-obs-set-of-lumps]
+hold: L3

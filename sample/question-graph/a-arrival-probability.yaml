@@ -1,0 +1,10 @@
+id: a-arrival-probability
+type: answer
+title: Relative arrival-probability variable
+synopsis: The planned physical hypothesis. Open, nothing chosen.
+parents: [q-detector-variable]
+status: open
+hold: L3
+tag: physical-hypothesis
+q: 0.8
+a: 0.5

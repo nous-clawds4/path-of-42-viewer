@@ -1,0 +1,8 @@
+id: a2
+type: answer
+title: Bad rating and unknown parent
+parents: [q1, nope]
+status: accepted
+tag: definition
+q: 1.5
+a: 0.5

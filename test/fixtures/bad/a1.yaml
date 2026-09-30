@@ -1,0 +1,9 @@
+id: a1
+type: answer
+title: Rejected with no reopen-if
+parents: [q1]
+status: rejected
+tag: principle
+rationale: because
+q: 0.9
+a: 0.1

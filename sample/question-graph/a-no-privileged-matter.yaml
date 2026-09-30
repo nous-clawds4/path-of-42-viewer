@@ -1,0 +1,17 @@
+id: a-no-privileged-matter
+type: answer
+title: No privileged matter
+synopsis: No class of matter is privileged as an observer. A methodological principle.
+parents: [q-which-objects-observe]
+status: accepted
+hold: L2
+tag: method
+rationale: >-
+  By analogy with no preferred frame (GR) and the Copernican lesson; the burden
+  of proof falls on privilege.
+reopen_if: null
+q: 0.95
+a: 0.8
+sources:
+  - label: path-of-42.md §7–§8
+    url: https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#8-representation

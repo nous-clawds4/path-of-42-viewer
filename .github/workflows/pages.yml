@@ -1,0 +1,76 @@
+name: Build and deploy to GitHub Pages
+
+# Builds site/data/graph.json and publishes site/ to Pages.
+# By default the graph is the SAMPLE in sample/question-graph/.
+# To show a real question graph, set repository variables (Settings > Secrets and
+# variables > Actions > Variables), or pass the same values to a manual run:
+#   GRAPH_REPO  e.g. nous-clawds4/physics
+#   GRAPH_PATH  e.g. public-papers/observer-space-framework/question-graph
+#   GRAPH_REF   e.g. main (optional)
+# The sample then stays available at ?graph=data/sample.json.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      graph_repo: { description: 'Source repo (OWNER/REPO); empty = sample', required: false, default: '' }
+      graph_path: { description: 'Path of the question-graph/ folder in that repo', required: false, default: '' }
+      graph_ref: { description: 'Branch, tag or SHA', required: false, default: '' }
+  repository_dispatch:
+    types: [question-graph-updated]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GRAPH_REPO: ${{ inputs.graph_repo || vars.GRAPH_REPO }}
+      GRAPH_PATH: ${{ inputs.graph_path || vars.GRAPH_PATH }}
+      GRAPH_REF: ${{ inputs.graph_ref || vars.GRAPH_REF }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Build sample graph
+        run: |
+          node build/build.mjs --in sample/question-graph --out site/data/sample.json
+          cp site/data/sample.json site/data/graph.json
+      - name: Check out real question graph
+        if: env.GRAPH_REPO != ''
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.GRAPH_REPO }}
+          ref: ${{ env.GRAPH_REF }}
+          path: graph-src
+          fetch-depth: 0
+      - name: Build real graph
+        if: env.GRAPH_REPO != ''
+        run: |
+          node build/build.mjs --in "graph-src/${GRAPH_PATH}" --out site/data/graph.json \
+            --git --repo-url "https://github.com/${GRAPH_REPO}"
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

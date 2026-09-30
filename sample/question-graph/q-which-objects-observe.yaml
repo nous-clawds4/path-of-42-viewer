@@ -1,0 +1,9 @@
+id: q-which-objects-observe
+type: question
+title: Which physical objects can be observers?
+synopsis: Which physical objects can and cannot be observers? Is there a privileged class?
+parents: [a-observer-physical-system]
+hold: L1
+sources:
+  - label: path-of-42.md §7
+    url: https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics

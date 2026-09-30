@@ -1,0 +1,16 @@
+id: a-vtau
+type: answer
+title: V^τ
+synopsis: The V^τ construction that superseded V*.
+parents: [q-vstar]
+status: accepted
+hold: L3
+tag: math-tool
+rationale: SAMPLE placeholder.
+q: 0.8
+a: 0.8
+sources:
+  - label: "physics#134"
+    url: https://github.com/nous-clawds4/physics/pull/134
+  - label: "physics#123: v0.5 prose, V^τ honesty"
+    url: https://github.com/nous-clawds4/physics/pull/123

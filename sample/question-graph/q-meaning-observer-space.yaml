@@ -1,0 +1,6 @@
+id: q-meaning-observer-space
+type: question
+title: What does 'observer space' mean?
+synopsis: Which object does the framework call observer space (Obs)?
+parents: [a-observer-physical-system]
+hold: L2

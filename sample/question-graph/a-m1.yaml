@@ -1,0 +1,13 @@
+id: a-m1
+type: answer
+title: (M1)
+synopsis: The (M1) weighting, as named in the born-rule readiness notes. Open, not chosen.
+parents: [q-weight-evolutions]
+status: open
+hold: L3
+tag: math-tool
+q: 0.8
+a: 0.5
+sources:
+  - label: reviews/born-rule-readiness-scan.md
+    url: https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness-scan.md
