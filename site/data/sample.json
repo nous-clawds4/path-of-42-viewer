@@ -1,0 +1,686 @@
+{
+  "format": "path-of-42/graph@1",
+  "meta": {
+    "title": "Observer-space framework (SAMPLE)",
+    "sample": true,
+    "note": "Node names are drawn from real framework decisions, but the graph structure, synopses and every q / a value are illustrative placeholders, not rulings. This is not the physics pilot's retro-mapping of v0.3 to v0.7.1.",
+    "source_base_url": "https://github.com/nous-clawds4/path-of-42-viewer/blob/main/sample/question-graph/",
+    "source_dir": "sample/question-graph",
+    "built_at": "2026-10-03T02:03:53.557Z"
+  },
+  "roots": [
+    "a-observer-physical-system"
+  ],
+  "nodes": [
+    {
+      "id": "a-observer-physical-system",
+      "file": "a-observer-physical-system.yaml",
+      "type": "answer",
+      "title": "The observer as a physical system",
+      "synopsis": "Root. The observer is a physical system inside the theory, of the same kind as everything else physics describes.",
+      "parents": [],
+      "status": "accepted",
+      "hold": "L0",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "path-of-42.md §7 (seed example)",
+          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
+        },
+        {
+          "label": "Statement of the Problem v0.5 (wds4/physics@047ba165)",
+          "url": "https://github.com/wds4/physics/blob/047ba165389ceeb1ea778dd1ffdf4d89a535a62c/public-essays/statement-of-the-problem/versions/v0.5.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "q-describe-branching",
+        "q-meaning-observer-space",
+        "q-which-objects-observe"
+      ],
+      "h": 1,
+      "h_parent": null,
+      "weakest_parent": null,
+      "depth": 0
+    },
+    {
+      "id": "q-describe-branching",
+      "file": "q-describe-branching.yaml",
+      "type": "question",
+      "title": "How is branching described?",
+      "synopsis": "What structure carries the branching of histories?",
+      "parents": [
+        "a-observer-physical-system"
+      ],
+      "status": null,
+      "hold": "L2",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [],
+      "sample": true,
+      "children": [
+        "a-branch-points",
+        "a-everett-worlds"
+      ],
+      "depth": 1,
+      "weakest_parent": "a-observer-physical-system",
+      "h_parent": 1,
+      "h": 1
+    },
+    {
+      "id": "q-meaning-observer-space",
+      "file": "q-meaning-observer-space.yaml",
+      "type": "question",
+      "title": "What does 'observer space' mean?",
+      "synopsis": "Which object does the framework call observer space (Obs)?",
+      "parents": [
+        "a-observer-physical-system"
+      ],
+      "status": null,
+      "hold": "L2",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [],
+      "sample": true,
+      "children": [
+        "a-gielen-wise",
+        "a-obs-set-of-lumps"
+      ],
+      "depth": 1,
+      "weakest_parent": "a-observer-physical-system",
+      "h_parent": 1,
+      "h": 1
+    },
+    {
+      "id": "q-which-objects-observe",
+      "file": "q-which-objects-observe.yaml",
+      "type": "question",
+      "title": "Which physical objects can be observers?",
+      "synopsis": "Which physical objects can and cannot be observers? Is there a privileged class?",
+      "parents": [
+        "a-observer-physical-system"
+      ],
+      "status": null,
+      "hold": "L1",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "path-of-42.md §7",
+          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
+        }
+      ],
+      "sample": true,
+      "children": [
+        "a-no-privileged-matter",
+        "a-privileged-matter"
+      ],
+      "depth": 1,
+      "weakest_parent": "a-observer-physical-system",
+      "h_parent": 1,
+      "h": 1
+    },
+    {
+      "id": "a-branch-points",
+      "file": "a-branch-points.yaml",
+      "type": "answer",
+      "title": "Branch points / choice points",
+      "synopsis": "Describe branching by branch points (choice points) in a tree of evolutions.",
+      "parents": [
+        "q-describe-branching"
+      ],
+      "status": "accepted",
+      "hold": "L2",
+      "tag": "definition",
+      "rationale": "SAMPLE placeholder.",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "Mathematical Foundations essay v0.3 (\"branch points, or choice points\")",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/versions/v0.3.md"
+        },
+        {
+          "label": "reviews/born-rule-readiness.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "q-detector-variable",
+        "q-weight-evolutions"
+      ],
+      "depth": 2,
+      "weakest_parent": "q-describe-branching",
+      "h_parent": 1,
+      "h": 0.76
+    },
+    {
+      "id": "a-everett-worlds",
+      "file": "a-everett-worlds.yaml",
+      "type": "answer",
+      "title": "Everett worlds",
+      "synopsis": "Describe branching as Everettian worlds.",
+      "parents": [
+        "q-describe-branching"
+      ],
+      "status": "rejected",
+      "hold": "L2",
+      "tag": "definition",
+      "rationale": "observer-space-ontology.md states that the framework is not Everettian quantum mechanics.",
+      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
+      "q": 0.95,
+      "a": 0.2,
+      "sources": [
+        {
+          "label": "papers/observer-space-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 2,
+      "weakest_parent": "q-describe-branching",
+      "h_parent": 1,
+      "h": 0.19
+    },
+    {
+      "id": "a-gielen-wise",
+      "file": "a-gielen-wise.md",
+      "type": "answer",
+      "title": "Gielen–Wise 4-velocity observer space",
+      "synopsis": "Reading 'observer space' as Gielen and Wise's space of observer 4-velocities.",
+      "parents": [
+        "q-meaning-observer-space"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "obs-as-a-space.md lists \"closing gauge by taking Obs to be Gielen–Wise\" under Killed, and says the Fermi-slice topology is not Gielen–Wise's 7-manifold of 4-velocities on a fixed W.",
+      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
+      "q": 0.8,
+      "a": 0.2,
+      "sources": [
+        {
+          "label": "papers/obs-as-a-space.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-space.md"
+        },
+        {
+          "label": "papers/obs-as-a-set.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-set.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 2,
+      "weakest_parent": "q-meaning-observer-space",
+      "h_parent": 1,
+      "h": 0.16000000000000003
+    },
+    {
+      "id": "a-obs-set-of-lumps",
+      "file": "a-obs-set-of-lumps.yaml",
+      "type": "answer",
+      "title": "Obs as a set of lumps",
+      "synopsis": "Obs is the set of lumps, coordinate presentations modulo pointed germ equivalence (cheat sheet, \"Observer space (as a set)\").",
+      "parents": [
+        "q-meaning-observer-space"
+      ],
+      "status": "accepted",
+      "hold": "L2",
+      "tag": "definition",
+      "rationale": "SAMPLE placeholder.",
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "papers/cheat-sheet.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/cheat-sheet.md"
+        },
+        {
+          "label": "papers/obs-as-a-set.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-set.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "q-ck-join-law",
+        "q-weight-evolutions"
+      ],
+      "depth": 2,
+      "weakest_parent": "q-meaning-observer-space",
+      "h_parent": 1,
+      "h": 0.6400000000000001
+    },
+    {
+      "id": "a-no-privileged-matter",
+      "file": "a-no-privileged-matter.yaml",
+      "type": "answer",
+      "title": "No privileged matter",
+      "synopsis": "No class of matter is privileged as an observer. A methodological principle.",
+      "parents": [
+        "q-which-objects-observe"
+      ],
+      "status": "accepted",
+      "hold": "L2",
+      "tag": "method",
+      "rationale": "By analogy with no preferred frame (GR) and the Copernican lesson; the burden of proof falls on privilege.",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "path-of-42.md §7–§8",
+          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#8-representation"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 2,
+      "weakest_parent": "q-which-objects-observe",
+      "h_parent": 1,
+      "h": 0.76
+    },
+    {
+      "id": "a-privileged-matter",
+      "file": "a-privileged-matter.md",
+      "type": "answer",
+      "title": "Privileged (e.g. conscious) matter",
+      "synopsis": "A privileged class of matter, for example conscious matter, that alone can observe.\n(Markdown body becomes the synopsis when no `synopsis` field is given.)",
+      "parents": [
+        "q-which-objects-observe"
+      ],
+      "status": "rejected",
+      "hold": "L1",
+      "tag": "method",
+      "rationale": "No physical criterion picks out the class without presupposing observation, and it would put the observer partly outside the physics, against the root.",
+      "reopen_if": "A physical, independently testable criterion separating observers from non-observers turns up, for example statistics that depend on what kind of system sits in the measurement chain.",
+      "q": 0.95,
+      "a": 0.1,
+      "sources": [
+        {
+          "label": "path-of-42.md §7 (rejected answer, with why and reopen-if)",
+          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 2,
+      "weakest_parent": "q-which-objects-observe",
+      "h_parent": 1,
+      "h": 0.095
+    },
+    {
+      "id": "q-detector-variable",
+      "file": "q-detector-variable.yaml",
+      "type": "question",
+      "title": "Which variable meets detector statistics?",
+      "synopsis": "Which variable is associated with the relative probabilities of a particle arriving at each of several detectors?",
+      "parents": [
+        "a-branch-points"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "path-of-42.md §1 (the one planned physical hypothesis)",
+          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#1-structure-a-graph-not-layers"
+        }
+      ],
+      "sample": true,
+      "children": [
+        "a-arrival-probability"
+      ],
+      "depth": 3,
+      "weakest_parent": "a-branch-points",
+      "h_parent": 0.76,
+      "h": 0.76
+    },
+    {
+      "id": "q-ck-join-law",
+      "file": "q-ck-join-law.yaml",
+      "type": "question",
+      "title": "Which C^k join law?",
+      "synopsis": "Which join law for piecewise C^k graph joins?",
+      "parents": [
+        "a-obs-set-of-lumps"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [],
+      "sample": true,
+      "children": [
+        "a-option-f"
+      ],
+      "depth": 3,
+      "weakest_parent": "a-obs-set-of-lumps",
+      "h_parent": 0.6400000000000001,
+      "h": 0.6400000000000001
+    },
+    {
+      "id": "q-weight-evolutions",
+      "file": "q-weight-evolutions.yaml",
+      "type": "question",
+      "title": "Which weight on evolutions?",
+      "synopsis": "Which measure weights evolutions at a cut? Two parents, so its h uses the weaker one.",
+      "parents": [
+        "a-branch-points",
+        "a-obs-set-of-lumps"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "reviews/born-rule-readiness.md (#159)",
+          "url": "https://github.com/nous-clawds4/physics/pull/159"
+        }
+      ],
+      "sample": true,
+      "children": [
+        "a-m1",
+        "a-m2"
+      ],
+      "depth": 3,
+      "weakest_parent": "a-obs-set-of-lumps",
+      "h_parent": 0.6400000000000001,
+      "h": 0.6400000000000001
+    },
+    {
+      "id": "a-arrival-probability",
+      "file": "a-arrival-probability.yaml",
+      "type": "answer",
+      "title": "Relative arrival-probability variable",
+      "synopsis": "The planned physical hypothesis. Open, nothing chosen.",
+      "parents": [
+        "q-detector-variable"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "physical-hypothesis",
+      "rationale": null,
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.5,
+      "sources": [],
+      "sample": false,
+      "children": [],
+      "depth": 4,
+      "weakest_parent": "q-detector-variable",
+      "h_parent": 0.76,
+      "h": 0.30400000000000005
+    },
+    {
+      "id": "a-option-f",
+      "file": "a-option-f.yaml",
+      "type": "answer",
+      "title": "Option F",
+      "synopsis": "Ontology's Option F, adopted as the working in-house C^k join law.",
+      "parents": [
+        "q-ck-join-law"
+      ],
+      "status": "accepted",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Adopted by David on 2026-09-07 as the working in-house join law (#104).",
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "physics#103: Ontology proposal, Option F",
+          "url": "https://github.com/nous-clawds4/physics/pull/103"
+        },
+        {
+          "label": "physics#104: Adopt Option F",
+          "url": "https://github.com/nous-clawds4/physics/pull/104"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "q-vstar"
+      ],
+      "depth": 4,
+      "weakest_parent": "q-ck-join-law",
+      "h_parent": 0.6400000000000001,
+      "h": 0.40960000000000013
+    },
+    {
+      "id": "a-m1",
+      "file": "a-m1.yaml",
+      "type": "answer",
+      "title": "(M1)",
+      "synopsis": "The (M1) weighting, as named in the born-rule readiness notes. Open, not chosen.",
+      "parents": [
+        "q-weight-evolutions"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": null,
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "reviews/born-rule-readiness-scan.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness-scan.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 4,
+      "weakest_parent": "q-weight-evolutions",
+      "h_parent": 0.6400000000000001,
+      "h": 0.25600000000000006
+    },
+    {
+      "id": "a-m2",
+      "file": "a-m2.yaml",
+      "type": "answer",
+      "title": "(M2)",
+      "synopsis": "The (M2) weighting, as named in the born-rule readiness notes. Open, not chosen.",
+      "parents": [
+        "q-weight-evolutions"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": null,
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "reviews/born-rule-readiness-scan.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness-scan.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 4,
+      "weakest_parent": "q-weight-evolutions",
+      "h_parent": 0.6400000000000001,
+      "h": 0.25600000000000006
+    },
+    {
+      "id": "q-vstar",
+      "file": "q-vstar.yaml",
+      "type": "question",
+      "title": "V* or V^τ?",
+      "synopsis": "Under Option F, which vertex construction does the framework use?",
+      "parents": [
+        "a-option-f"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": null,
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "physics#106: V* extend-vs-not under Option F",
+          "url": "https://github.com/nous-clawds4/physics/pull/106"
+        }
+      ],
+      "sample": true,
+      "children": [
+        "a-vstar",
+        "a-vtau"
+      ],
+      "depth": 5,
+      "weakest_parent": "a-option-f",
+      "h_parent": 0.40960000000000013,
+      "h": 0.40960000000000013
+    },
+    {
+      "id": "a-vstar",
+      "file": "a-vstar.yaml",
+      "type": "answer",
+      "title": "V*",
+      "synopsis": "The V* construction, pressure-tested under Option F.",
+      "parents": [
+        "q-vstar"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Superseded by V^τ (banners,",
+      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
+      "q": 0.8,
+      "a": 0.2,
+      "sources": [
+        {
+          "label": "physics#106: V* extend-vs-not",
+          "url": "https://github.com/nous-clawds4/physics/pull/106"
+        },
+        {
+          "label": "physics#134: V* superseded by V^tau",
+          "url": "https://github.com/nous-clawds4/physics/pull/134"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-vstar",
+      "h_parent": 0.40960000000000013,
+      "h": 0.06553600000000002
+    },
+    {
+      "id": "a-vtau",
+      "file": "a-vtau.yaml",
+      "type": "answer",
+      "title": "V^τ",
+      "synopsis": "The V^τ construction that superseded V*.",
+      "parents": [
+        "q-vstar"
+      ],
+      "status": "accepted",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "SAMPLE placeholder.",
+      "reopen_if": null,
+      "q": 0.8,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "physics#134",
+          "url": "https://github.com/nous-clawds4/physics/pull/134"
+        },
+        {
+          "label": "physics#123: v0.5 prose, V^τ honesty",
+          "url": "https://github.com/nous-clawds4/physics/pull/123"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-vstar",
+      "h_parent": 0.40960000000000013,
+      "h": 0.2621440000000001
+    }
+  ],
+  "versions": [
+    {
+      "id": "sample-v1",
+      "title": "Sample version 1 (SAMPLE)",
+      "synopsis": "Illustrative selection only, not a real paper version.",
+      "selects": [
+        "a-no-privileged-matter",
+        "a-obs-set-of-lumps",
+        "a-branch-points"
+      ],
+      "sources": [],
+      "file": "versions/sample-v1.yaml",
+      "path": [
+        "a-branch-points",
+        "q-describe-branching",
+        "a-observer-physical-system",
+        "a-obs-set-of-lumps",
+        "q-meaning-observer-space",
+        "a-no-privileged-matter",
+        "q-which-objects-observe"
+      ]
+    },
+    {
+      "id": "sample-v2",
+      "title": "Sample version 2 (SAMPLE)",
+      "synopsis": "Illustrative selection only, not a real paper version.",
+      "selects": [
+        "a-no-privileged-matter",
+        "a-obs-set-of-lumps",
+        "a-branch-points",
+        "a-option-f",
+        "a-vtau"
+      ],
+      "sources": [],
+      "file": "versions/sample-v2.yaml",
+      "path": [
+        "a-vtau",
+        "q-vstar",
+        "a-option-f",
+        "q-ck-join-law",
+        "a-obs-set-of-lumps",
+        "q-meaning-observer-space",
+        "a-observer-physical-system",
+        "a-branch-points",
+        "q-describe-branching",
+        "a-no-privileged-matter",
+        "q-which-objects-observe"
+      ]
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

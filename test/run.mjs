@@ -1,4 +1,6 @@
-// Minimal checks for build/build.mjs: sample builds clean; bad fixture reports the expected problems.
+// Minimal checks for build/build.mjs: sample builds clean; bad fixture reports the expected problems;
+// --meta / --meta-file overlays apply. With PHYSICS_DIR set (a checkout of nous-clawds4/physics),
+// also checks that the physics pilot graph builds with 0 errors.
 import { execFileSync, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
@@ -27,4 +29,26 @@ has(b.warnings, /version v: selects a1, which is rejected/);
 has(b.warnings, /version v: unknown node ghost/);
 has(b.warnings, /version v: selects both a1 and a2/);
 assert.equal(b.nodes.find(n => n.id === 'a1').tag, 'method', 'principle is an alias of method');
+
+// Metadata overlays: --meta-file sets banner keys, --meta wins over it, graph.yaml keys survive.
+execFileSync('node', ['build/build.mjs', '--in', 'sample/question-graph', '--out', '/tmp/p42-meta.json',
+  '--meta-file', 'config/physics-pilot.yaml', '--meta', 'badge=X', '--meta', 'proposal=true'], { stdio: 'ignore' });
+const m = JSON.parse(fs.readFileSync('/tmp/p42-meta.json', 'utf8')).meta;
+assert.equal(m.badge, 'X', '--meta overrides --meta-file');
+assert.equal(m.proposal, true, '--meta parses booleans');
+assert.match(m.notice, /pending David's signature/, '--meta-file applies');
+assert.equal(m.sample, true, 'graph.yaml keys kept');
+
+// The physics pilot (optional; CI builds it in the Pages workflow anyway).
+if (process.env.PHYSICS_DIR) {
+  const dir = `${process.env.PHYSICS_DIR}/public-papers/observer-space-framework/question-graph`;
+  const p = spawnSync('node', ['build/build.mjs', '--in', dir, '--out', '/tmp/p42-pilot.json'], { encoding: 'utf8' });
+  assert.equal(p.status, 0, `pilot builds with 0 errors\n${p.stderr}`);
+  const pg = JSON.parse(fs.readFileSync('/tmp/p42-pilot.json', 'utf8'));
+  assert.equal(pg.errors.length, 0);
+  const ids = new Set(pg.nodes.map(n => n.id));
+  for (const id of ['a-root', 'q-observer-object', 'a-jet-direction']) assert.ok(ids.has(id), `pilot has ${id}`);
+  assert.equal(pg.meta.sample, false, 'pilot is not sample data');
+  console.log(`pilot: ${pg.nodes.length} nodes, ${pg.warnings.length} warnings`);
+}
 console.log('all tests passed');

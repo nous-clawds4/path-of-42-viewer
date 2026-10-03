@@ -1,686 +1,1830 @@
 {
   "format": "path-of-42/graph@1",
   "meta": {
-    "title": "Observer-space framework (SAMPLE)",
-    "sample": true,
-    "note": "Node names are drawn from real framework decisions, but the graph structure, synopses and every q / a value are illustrative placeholders, not rulings. This is not the physics pilot's retro-mapping of v0.3 to v0.7.1.",
-    "source_base_url": "https://github.com/nous-clawds4/path-of-42-viewer/blob/main/sample/question-graph/",
-    "source_dir": "sample/question-graph",
-    "built_at": "2026-09-30T02:51:32.110Z"
+    "title": "Observer-space framework v0.3 to v0.7.1 (Path of 42 pilot retro-map)",
+    "sample": false,
+    "note": "Pilot retro-map, not a ruling. Every q, a and hold level is a proposal, pending David's signature. Open nodes record undecided calls with costs on both sides and no lean. See index.md.",
+    "repo_url": "https://github.com/nous-clawds4/physics",
+    "source_base_url": "https://github.com/nous-clawds4/physics/blob/main/public-papers/observer-space-framework/question-graph/",
+    "badge": "PILOT · PROPOSALS",
+    "proposal": true,
+    "notice": "Physics pilot retro-mapping of the observer-space framework paper versions, not a ruling. Every q, a and hold value is a proposal, pending David's signature.",
+    "notice_link": "https://github.com/nous-clawds4/physics/blob/main/public-papers/observer-space-framework/question-graph/index.md",
+    "notice_link_label": "Method and caveats (index.md)",
+    "source_commit": "654867b1f4701bbbf87f2c5c79d03885f778c685",
+    "source_commit_url": "https://github.com/nous-clawds4/physics/commit/654867b1f4701bbbf87f2c5c79d03885f778c685",
+    "source_dir": "../physics/public-papers/observer-space-framework/question-graph",
+    "built_at": "2026-10-03T02:03:54.412Z"
   },
   "roots": [
-    "a-observer-physical-system"
+    "a-root"
   ],
   "nodes": [
     {
-      "id": "a-observer-physical-system",
-      "file": "a-observer-physical-system.yaml",
+      "id": "a-root",
+      "file": "a-root.yaml",
       "type": "answer",
-      "title": "The observer as a physical system",
-      "synopsis": "Root. The observer is a physical system inside the theory, of the same kind as everything else physics describes.",
+      "title": "Root: the observer is a physical object inside the theory",
+      "synopsis": "The observer is a physical system of the same kind as everything else the theory describes, with no privileged observer matter. Every version of the framework paper serves this goal.",
       "parents": [],
       "status": "accepted",
       "hold": "L0",
-      "tag": null,
-      "rationale": null,
+      "tag": "method",
+      "rationale": "Wording from the IH method doc's physics seed (path-of-42 §7, root at L0) and David's notes (docs/scratch/path-of-42.md: no privileged pieces of matter). The framework paper states the same object: \"An observer, in this programme, is a physical object\" (v0.7.1 §1). h(root) = 1 by definition, so no q or a is set. Record note: the paper versions never state a root; this sentence is the mapper's. Hold L0: proposal, pending David's signature.",
       "reopen_if": null,
       "q": null,
       "a": null,
       "sources": [
         {
-          "label": "path-of-42.md §7 (seed example)",
-          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
+          "label": "infinite-harness#7: the Path of 42 method doc (docs/path-of-42.md)",
+          "url": "https://github.com/nous-clawds4/infinite-harness/pull/7"
         },
         {
-          "label": "Statement of the Problem v0.5 (wds4/physics@047ba165)",
-          "url": "https://github.com/wds4/physics/blob/047ba165389ceeb1ea778dd1ffdf4d89a535a62c/public-essays/statement-of-the-problem/versions/v0.5.md"
+          "label": "physics#194: the theory of the observer (docs/scratch/path-of-42.md)",
+          "url": "https://github.com/nous-clawds4/physics/pull/194"
+        },
+        {
+          "label": "physics#139: Statement of the Problem v0.1",
+          "url": "https://github.com/nous-clawds4/physics/pull/139"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [
-        "q-describe-branching",
-        "q-meaning-observer-space",
-        "q-which-objects-observe"
+        "q-observer-object"
       ],
       "h": 1,
       "h_parent": null,
       "weakest_parent": null,
-      "depth": 0
+      "depth": 0,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "q-describe-branching",
-      "file": "q-describe-branching.yaml",
+      "id": "q-observer-object",
+      "file": "q-observer-object.yaml",
       "type": "question",
-      "title": "How is branching described?",
-      "synopsis": "What structure carries the branching of histories?",
+      "title": "What physical object is an observer, and what is observer space?",
+      "synopsis": "A definition question raised by the root: which object in the theory is the observer, and what space do such objects form?",
       "parents": [
-        "a-observer-physical-system"
-      ],
-      "status": null,
-      "hold": "L2",
-      "tag": null,
-      "rationale": null,
-      "reopen_if": null,
-      "q": null,
-      "a": null,
-      "sources": [],
-      "sample": true,
-      "children": [
-        "a-branch-points",
-        "a-everett-worlds"
-      ],
-      "depth": 1,
-      "weakest_parent": "a-observer-physical-system",
-      "h_parent": 1,
-      "h": 1
-    },
-    {
-      "id": "q-meaning-observer-space",
-      "file": "q-meaning-observer-space.yaml",
-      "type": "question",
-      "title": "What does 'observer space' mean?",
-      "synopsis": "Which object does the framework call observer space (Obs)?",
-      "parents": [
-        "a-observer-physical-system"
-      ],
-      "status": null,
-      "hold": "L2",
-      "tag": null,
-      "rationale": null,
-      "reopen_if": null,
-      "q": null,
-      "a": null,
-      "sources": [],
-      "sample": true,
-      "children": [
-        "a-gielen-wise",
-        "a-obs-set-of-lumps"
-      ],
-      "depth": 1,
-      "weakest_parent": "a-observer-physical-system",
-      "h_parent": 1,
-      "h": 1
-    },
-    {
-      "id": "q-which-objects-observe",
-      "file": "q-which-objects-observe.yaml",
-      "type": "question",
-      "title": "Which physical objects can be observers?",
-      "synopsis": "Which physical objects can and cannot be observers? Is there a privileged class?",
-      "parents": [
-        "a-observer-physical-system"
+        "a-root"
       ],
       "status": null,
       "hold": "L1",
       "tag": null,
-      "rationale": null,
+      "rationale": "An a priori (definition) question. Every version from v0.3 to v0.7.1 answers it first, in §2. Hold L1 (raised by Geometry #200, H1): proposal, pending David's signature.",
       "reopen_if": null,
       "q": null,
       "a": null,
       "sources": [
         {
-          "label": "path-of-42.md §7",
-          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
-        }
-      ],
-      "sample": true,
-      "children": [
-        "a-no-privileged-matter",
-        "a-privileged-matter"
-      ],
-      "depth": 1,
-      "weakest_parent": "a-observer-physical-system",
-      "h_parent": 1,
-      "h": 1
-    },
-    {
-      "id": "a-branch-points",
-      "file": "a-branch-points.yaml",
-      "type": "answer",
-      "title": "Branch points / choice points",
-      "synopsis": "Describe branching by branch points (choice points) in a tree of evolutions.",
-      "parents": [
-        "q-describe-branching"
-      ],
-      "status": "accepted",
-      "hold": "L2",
-      "tag": "definition",
-      "rationale": "SAMPLE placeholder.",
-      "reopen_if": null,
-      "q": 0.95,
-      "a": 0.8,
-      "sources": [
-        {
-          "label": "Mathematical Foundations essay v0.3 (\"branch points, or choice points\")",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/versions/v0.3.md"
+          "label": "physics#98: public framework v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
         },
         {
-          "label": "reviews/born-rule-readiness.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness.md"
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [
-        "q-detector-variable",
-        "q-weight-evolutions"
+        "a-gielen-wise",
+        "a-jet-direction"
       ],
-      "depth": 2,
-      "weakest_parent": "q-describe-branching",
+      "depth": 1,
+      "weakest_parent": "a-root",
       "h_parent": 1,
-      "h": 0.76
-    },
-    {
-      "id": "a-everett-worlds",
-      "file": "a-everett-worlds.yaml",
-      "type": "answer",
-      "title": "Everett worlds",
-      "synopsis": "Describe branching as Everettian worlds.",
-      "parents": [
-        "q-describe-branching"
-      ],
-      "status": "rejected",
-      "hold": "L2",
-      "tag": "definition",
-      "rationale": "observer-space-ontology.md states that the framework is not Everettian quantum mechanics.",
-      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
-      "q": 0.95,
-      "a": 0.2,
-      "sources": [
+      "h": 1,
+      "history": [
         {
-          "label": "papers/observer-space-ontology.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md"
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
         }
-      ],
-      "sample": false,
-      "children": [],
-      "depth": 2,
-      "weakest_parent": "q-describe-branching",
-      "h_parent": 1,
-      "h": 0.19
+      ]
     },
     {
       "id": "a-gielen-wise",
-      "file": "a-gielen-wise.md",
+      "file": "a-gielen-wise.yaml",
       "type": "answer",
-      "title": "Gielen–Wise 4-velocity observer space",
-      "synopsis": "Reading 'observer space' as Gielen and Wise's space of observer 4-velocities.",
+      "title": "Observer space as Gielen–Wise's space of observer 4-velocities",
+      "synopsis": "Read observer space as Gielen and Wise's 7-dimensional space of unit future timelike vectors, either over a given spacetime or as an abstract Cartan geometry.",
       "parents": [
-        "q-meaning-observer-space"
+        "q-observer-object"
       ],
       "status": "rejected",
       "hold": "L3",
       "tag": "definition",
-      "rationale": "obs-as-a-space.md lists \"closing gauge by taking Obs to be Gielen–Wise\" under Killed, and says the Fermi-slice topology is not Gielen–Wise's 7-manifold of 4-velocities on a fixed W.",
-      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
-      "q": 0.8,
-      "a": 0.2,
+      "rationale": "Rejected as the meaning of this programme's observer space, from v0.3 on (§2). Its points are 4-velocities, not analytic germs, and V is not their 7-manifold: \"phrase collision only\" (v0.7.1 §2, §10). In-house, papers/obs-as-a-space.md lists \"closing gauge by taking Obs to be Gielen–Wise\" under Killed, and says their manifold needs a world W first while lumps do not. Literature #158 corrected the public wording: their observer space is not only \"on a given metric\"; it also has an abstract form with no spacetime assumed (carried in v0.7, outline item 18). Record note: the in-house note's reason (needs a W first) is weaker against the abstract form that #158 cites; the public reason (points are 4-velocities, not germs) is the one carried. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "Mapper's proposal; the record gives no reopen condition. If the named-home question for gauge, which obs-as-a-space.md keeps open (Gielen–Wise, a frame bundle, a jet bundle of a completed W), is taken up, and the abstract, no-spacetime-assumed form of their observer space (#158) can carry analytic-germ data without first fixing a world.",
+      "q": 0.95,
+      "a": 0.5,
       "sources": [
+        {
+          "label": "physics#98: v0.3 prose §2",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "physics#158: Literature review of v0.7 outline (L-items)",
+          "url": "https://github.com/nous-clawds4/physics/pull/158"
+        },
         {
           "label": "papers/obs-as-a-space.md",
           "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-space.md"
         },
         {
-          "label": "papers/obs-as-a-set.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-set.md"
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [],
       "depth": 2,
-      "weakest_parent": "q-meaning-observer-space",
+      "weakest_parent": "q-observer-object",
       "h_parent": 1,
-      "h": 0.16000000000000003
+      "h": 0.475,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "a-obs-set-of-lumps",
-      "file": "a-obs-set-of-lumps.yaml",
+      "id": "a-jet-direction",
+      "file": "a-jet-direction.yaml",
       "type": "answer",
-      "title": "Obs as a set of lumps",
-      "synopsis": "Obs is the set of lumps, coordinate presentations modulo pointed germ equivalence (cheat sheet, \"Observer space (as a set)\").",
+      "title": "An analytic metric germ with a future time direction (V = oriented observers)",
+      "synopsis": "An observer is the infinite jet of a real-analytic Lorentzian metric at a point (equivalently its analytic patch) with a future unit timelike vector u, taken modulo the germ's isotropy. V is the space of these oriented observers.",
       "parents": [
-        "q-meaning-observer-space"
+        "q-observer-object"
       ],
       "status": "accepted",
-      "hold": "L2",
+      "hold": "L1",
       "tag": "definition",
-      "rationale": "SAMPLE placeholder.",
+      "rationale": "Paper 1's object, kept in every version (v0.8 Appendix B.2a: \"Object: analytic jet plus future time direction\", kept). v0.3 made the graph vertices oriented observers (v0.3 prose changelog). The isotropy quotient was lost silently in v0.5 prose and restored in v0.6, after Claude Opus 5.5's HOLD on v0.5 (#128) and Geometry's ACCEPT of that item (#129). Hold L1 because v0.7.1 treats the object as a lock (a larger observer \"cannot [be taken] without the lock being changed\", §9 T1 row). Record note: v0.3's \"V = Lift(u)\" was dropped and V now names the vertex space (v0.8 B.2b). Ratings (q, a) and hold level: proposal, pending David's signature.",
       "reopen_if": null,
-      "q": 0.8,
-      "a": 0.8,
+      "q": 0.95,
+      "a": 0.95,
       "sources": [
         {
-          "label": "papers/cheat-sheet.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/cheat-sheet.md"
+          "label": "physics#98: v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
         },
         {
-          "label": "papers/obs-as-a-set.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/obs-as-a-set.md"
+          "label": "physics#128: Claude Opus 5.5 HOLD on v0.5 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test of #128",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline (isotropy restored)",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "Paper 1, papers/observer-space-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [
-        "q-ck-join-law",
-        "q-weight-evolutions"
+        "q-branching",
+        "q-what-is-a-world"
       ],
       "depth": 2,
-      "weakest_parent": "q-meaning-observer-space",
+      "weakest_parent": "q-observer-object",
       "h_parent": 1,
-      "h": 0.6400000000000001
+      "h": 0.9025,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "a-no-privileged-matter",
-      "file": "a-no-privileged-matter.yaml",
-      "type": "answer",
-      "title": "No privileged matter",
-      "synopsis": "No class of matter is privileged as an observer. A methodological principle.",
+      "id": "q-branching",
+      "file": "q-branching.yaml",
+      "type": "question",
+      "title": "How can one observer have more than one future?",
+      "synopsis": "Paper 1 needs \"the evolution is not unique\". Under analyticity one jet fixes the metric on a connected analytic world, so what supplies branching?",
       "parents": [
-        "q-which-objects-observe"
+        "a-jet-direction"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": "The v0.2.1 HOLE: Claude Fable 5.1's HOLD on v0.2.1 prose, confirmed by Geometry (CWS forces a single arm), which v0.3 answers (v0.3 Status line). Two open calls bear here and are not decided: Q-D1 (does \"without being fully deterministic\" require branching or only permit it?) and T3 = #139 (a) (the essay's no-teleport intuition versus jumps). See the index gaps.",
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "reviews/v0.2.1-prose-claude-fable-5.1.md (HOLD, one HOLE)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/v0.2.1-prose-claude-fable-5.1.md"
+        },
+        {
+          "label": "physics#98: v0.3 prose (motion revision)",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "Q-D1 to Q-D5: public-essays/mathematical-foundations/reviews/v0.1-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/reviews/v0.1-ontology.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "a-cws-branching",
+        "a-type-ii"
+      ],
+      "depth": 3,
+      "weakest_parent": "a-jet-direction",
+      "h_parent": 0.9025,
+      "h": 0.9025,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "q-what-is-a-world",
+      "file": "q-what-is-a-world.yaml",
+      "type": "question",
+      "title": "What is a world, relative to an observer?",
+      "synopsis": "Many worlds share one local patch. Which worlds is an observer's germ compatible with, and what is counted when the paper speaks of alternatives?",
+      "parents": [
+        "a-jet-direction"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": "Raised by Paper 1's lock that nothing reconstructs a whole world from O (v0.7.1 §2). The relative ensembles E_W and E_M need a notion of world.",
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "physics#98: v0.3 prose §2 (world ensemble)",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "a-everett-worlds",
+        "a-world-analytic"
+      ],
+      "depth": 3,
+      "weakest_parent": "a-jet-direction",
+      "h_parent": 0.9025,
+      "h": 0.9025,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-cws-branching",
+      "file": "a-cws-branching.yaml",
+      "type": "answer",
+      "title": "Continuous World Switching (type-(i) hitchhiking) as the branching law",
+      "synopsis": "Branch by switching worlds at a shared oriented germ along piecewise geodesic lifts, with no jump in observer space.",
+      "parents": [
+        "q-branching"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Rejected as the branching law in v0.3 (\"CWS demoted\", #98). Under CWS and either path-germ equivalence (E1) or (E2) the branch set is a singleton, because the shared germ fixes a unique geodesic piece and all paths agree at the start (v0.7.1 §4.1). CWS stays as the accepted type-(i) null baseline; only its branching role is rejected. Claude #105 judged the HOLE \"cleared as an error\" by this move. Geometry #118 (on Claude #117, Claim A) accepted Claude's correction of the attribution: the singleton comes from germ sharing and geodesic uniqueness, not from infinite-order matching. #134's banners record \"CWS not favoured\" after Claude #128. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "Mapper's proposal, from the proposition's hypotheses: a path-germ equivalence other than (E1)/(E2) that a referee accepts, or a flaw in the CWS-singleton sketch, under which type-(i) motion gives two or more arms.",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#98: v0.3 prose (CWS demoted)",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "physics#105: Claude Fable 5.1 HOLD on v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "physics#118: Geometry on Claude #117 Claims A/B",
+          "url": "https://github.com/nous-clawds4/physics/pull/118"
+        },
+        {
+          "label": "physics#134: banners: CWS not favoured",
+          "url": "https://github.com/nous-clawds4/physics/pull/134"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 4,
+      "weakest_parent": "q-branching",
+      "h_parent": 0.9025,
+      "h": 0.42868749999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-type-ii",
+      "file": "a-type-ii.yaml",
+      "type": "answer",
+      "title": "Type-(ii) edges: a transition relation R on V, with R nonempty (working, abandonable)",
+      "synopsis": "Add discrete type-(ii) edges between oriented observers that are not successive germs along one geodesic, and postulate only that some exist. No R is specified.",
+      "parents": [
+        "q-branching"
       ],
       "status": "accepted",
-      "hold": "L2",
-      "tag": "method",
-      "rationale": "By analogy with no preferred frame (GR) and the Copernican lesson; the burden of proof falls on privilege.",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "v0.3 moves branching to a transition structure (V, R) (Definition 7), type (ii) \"working and abandonable\" (#98). Not derivable from locked data (Prop. 13, papers/type-ii-adopted.md). v0.7.1 keeps it as a working Postulate in existential form only (\"not derivable, existence only, and the weakest form of Paper 1's premise\"). Claude #105: the HOLE is relocated to the law of R, not cleared as a problem, and every later header says so. Costs recorded: the hidden-variable smell, kept loud (§4.3); abandoning type (ii) makes Paper 1's \"the evolution is not unique\" false. \"Whether to abandon type (ii)\" stays on the §9 Open list. Open calls Q-D1 (existence or permission) and T3 bear on this node and are not decided. The tag is the mapper's; the record calls this a working Postulate. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
       "reopen_if": null,
       "q": 0.95,
       "a": 0.8,
       "sources": [
         {
-          "label": "path-of-42.md §7–§8",
-          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#8-representation"
+          "label": "physics#98: v0.3 prose (type-(ii) R)",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "physics#105: Claude HOLD: HOLE relocated, not cleared",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "papers/type-ii-adopted.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/type-ii-adopted.md"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
-      "children": [],
-      "depth": 2,
-      "weakest_parent": "q-which-objects-observe",
-      "h_parent": 1,
-      "h": 0.76
+      "children": [
+        "q-composition",
+        "q-join-law",
+        "q-law-of-r",
+        "q-measure",
+        "q-realisation",
+        "q-vertex-times"
+      ],
+      "depth": 4,
+      "weakest_parent": "q-branching",
+      "h_parent": 0.9025,
+      "h": 0.6859,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "a-privileged-matter",
-      "file": "a-privileged-matter.md",
+      "id": "a-everett-worlds",
+      "file": "a-everett-worlds.yaml",
       "type": "answer",
-      "title": "Privileged (e.g. conscious) matter",
-      "synopsis": "A privileged class of matter, for example conscious matter, that alone can observe.\n(Markdown body becomes the synopsis when no `synopsis` field is given.)",
+      "title": "Worlds as Everett worlds (branches of a quantum state), counted as outcomes",
+      "synopsis": "Read the alternatives as Everett (decoherence) branches and weight them by counting worlds, as in AFLB 2008's outcome counting.",
       "parents": [
-        "q-which-objects-observe"
+        "q-what-is-a-world"
       ],
       "status": "rejected",
-      "hold": "L1",
-      "tag": "method",
-      "rationale": "No physical criterion picks out the class without presupposing observation, and it would put the observer partly outside the physics, against the root.",
-      "reopen_if": "A physical, independently testable criterion separating observers from non-observers turns up, for example statistics that depend on what kind of system sits in the measurement chain.",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "Rejected. Paper 1: \"If worlds in some other paper are 4-manifolds, or analytic patches, they are not Everett worlds\"; Paper 1 is \"not Everettian quantum mechanics\". From v0.6 on the framework paper firewalls the world-counting slot: the arms \"are oriented observers joined by R, not decoherence branches (Paper 1's own firewall)\", and AFLB 2008's generation-regular tree cannot separate the per-vertex rule from the count (v0.7.1 §7 and the §10 neighbour row). The 2008 SHPMP submission argued inside an Everettian frame; the paper cites it for its rules only (v0.7.1 §3). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "Mapper's proposal; the record gives no reopen condition. If the lock behind Paper 1's firewall is changed by its authority so that the programme's worlds are read as branches of a quantum state, or a map from analytic-patch worlds to such branches is exhibited that the firewall does not exclude.",
       "q": 0.95,
-      "a": 0.1,
+      "a": 0.5,
       "sources": [
         {
-          "label": "path-of-42.md §7 (rejected answer, with why and reopen-if)",
-          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#7-seed-example-physics"
+          "label": "Paper 1, papers/observer-space-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md"
+        },
+        {
+          "label": "physics#135: v0.6 prose §7 (world-counting firewall)",
+          "url": "https://github.com/nous-clawds4/physics/pull/135"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [],
-      "depth": 2,
-      "weakest_parent": "q-which-objects-observe",
-      "h_parent": 1,
-      "h": 0.095
+      "depth": 4,
+      "weakest_parent": "q-what-is-a-world",
+      "h_parent": 0.9025,
+      "h": 0.42868749999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "q-detector-variable",
-      "file": "q-detector-variable.yaml",
-      "type": "question",
-      "title": "Which variable meets detector statistics?",
-      "synopsis": "Which variable is associated with the relative probabilities of a particle arriving at each of several detectors?",
+      "id": "a-world-analytic",
+      "file": "a-world-analytic.yaml",
+      "type": "answer",
+      "title": "A world is a pointed analytic spacetime W = (M, p)",
+      "synopsis": "A world is a connected real-analytic Lorentzian 4-manifold with a point that carries the germ. E_W(O), the pointed worlds compatible with the germ, holds occurrences of one lump, not extra observers.",
       "parents": [
-        "a-branch-points"
+        "q-what-is-a-world"
+      ],
+      "status": "accepted",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "v0.3 §2 (world ensemble; v0.8 B.2b: \"World W=(M,p); sibling points\", kept). v0.7.1 §2: relative ensembles are \"not extra vertices, and not a second observer\"; the ensemble votes neither on the observer's identity nor on when branching occurs. Record note: v0.3's \"topology may vary\" and \"distinct world ensembles do not intersect\" were later dropped, and v0.8 B.2 says drops before v0.8 were unlogged, so their reasons are not in the record. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.95,
+      "sources": [
+        {
+          "label": "physics#98: v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        },
+        {
+          "label": "physics#183: v0.8 prose, Appendix B.2 status table",
+          "url": "https://github.com/nous-clawds4/physics/pull/183"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 4,
+      "weakest_parent": "q-what-is-a-world",
+      "h_parent": 0.9025,
+      "h": 0.8145062499999999,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "q-composition",
+      "file": "q-composition.yaml",
+      "type": "question",
+      "title": "How do segments and jumps compose along a history?",
+      "synopsis": "May a history take jump after jump at one value of proper time, and what state does the next decision depend on?",
+      "parents": [
+        "a-type-ii"
       ],
       "status": null,
       "hold": "L3",
       "tag": null,
-      "rationale": null,
+      "rationale": "Claude #105 §2: v0.3 never said how curvelet motion composes with R-edges; v0.4 wrote the composition (histories alternate segments and jumps, #112). Claude #128 row 2 found that the hard gate's clause (2) held per segment, not per history, because every Kretschmann target is itself a vertex, and proposed (A) or (B); Geometry #129 added (C). Open calls here, not decided: T1 = Q-D5 (does the arrival flag count as part of the observer?) and Q-D2 (is \"next\" a discrete step or continuous?). See the index gaps.",
       "reopen_if": null,
       "q": null,
       "a": null,
       "sources": [
         {
-          "label": "path-of-42.md §1 (the one planned physical hypothesis)",
-          "url": "https://github.com/nous-clawds4/infinite-harness/blob/6f02238c3aab7f9bcc8cf83abcebc6c98dc6d094/docs/path-of-42.md#1-structure-a-graph-not-layers"
+          "label": "physics#105: Claude HOLD on v0.3 prose (§2)",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "physics#112: v0.4 prose (composition)",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        },
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 2)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test (item 2)",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "Q-D1 to Q-D5: public-essays/mathematical-foundations/reviews/v0.1-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/reviews/v0.1-ontology.md"
         }
       ],
-      "sample": true,
+      "sample": false,
       "children": [
-        "a-arrival-probability"
+        "a-alternation",
+        "a-jump-bound",
+        "a-target-avoid"
       ],
-      "depth": 3,
-      "weakest_parent": "a-branch-points",
-      "h_parent": 0.76,
-      "h": 0.76
+      "depth": 5,
+      "weakest_parent": "a-type-ii",
+      "h_parent": 0.6859,
+      "h": 0.6859,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "q-ck-join-law",
-      "file": "q-ck-join-law.yaml",
+      "id": "q-join-law",
+      "file": "q-join-law.yaml",
       "type": "question",
-      "title": "Which C^k join law?",
-      "synopsis": "Which join law for piecewise C^k graph joins?",
+      "title": "What joins a geodesic segment to a type-(ii) edge (the join law)?",
+      "synopsis": "Where a history leaves one geodesic piece for another, what must hold: jet matching to some order, or bare graph incidence?",
       "parents": [
-        "a-obs-set-of-lumps"
+        "a-type-ii"
       ],
       "status": null,
       "hold": "L3",
       "tag": null,
-      "rationale": null,
+      "rationale": "Posed by Geometry's C^k join menu (#102) right after v0.3. Claude #105 had said v0.3 never stated how type-(i) motion composes with R-edges.",
       "reopen_if": null,
       "q": null,
       "a": null,
-      "sources": [],
-      "sample": true,
+      "sources": [
+        {
+          "label": "physics#102: piecewise geodesic C^k graph (join menu)",
+          "url": "https://github.com/nous-clawds4/physics/pull/102"
+        },
+        {
+          "label": "physics#105: Claude HOLD on v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        }
+      ],
+      "sample": false,
       "children": [
+        "a-option-e",
         "a-option-f"
       ],
-      "depth": 3,
-      "weakest_parent": "a-obs-set-of-lumps",
-      "h_parent": 0.6400000000000001,
-      "h": 0.6400000000000001
+      "depth": 5,
+      "weakest_parent": "a-type-ii",
+      "h_parent": 0.6859,
+      "h": 0.6859,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "q-weight-evolutions",
-      "file": "q-weight-evolutions.yaml",
+      "id": "q-measure",
+      "file": "q-measure.yaml",
       "type": "question",
-      "title": "Which weight on evolutions?",
-      "synopsis": "Which measure weights evolutions at a cut? Two parents, so its h uses the weaker one.",
+      "title": "How are the arms weighted? ((M1)/(M2); also T2 = Q-D3 = #139 (b))",
+      "synopsis": "At a branch point, what measure do the arms get: a per-vertex equal-weight postulate, or Paper 1's count of distinct evolutions at a named cut?",
       "parents": [
-        "a-branch-points",
-        "a-obs-set-of-lumps"
+        "a-type-ii"
       ],
       "status": null,
       "hold": "L3",
       "tag": null,
-      "rationale": null,
+      "rationale": "Framed as (M1)/(M2) in v0.6 after Claude #128 row 5 and Geometry #129 claim 4 (Paper 1 measure honesty); scoped symmetrically in v0.7 (#156). The same call appears as T2 (Mathematical Foundations v0.3), Q-D3, and #139 (b) (v0.7.1 header item 2 and §9 table: \"(b) = T2 and (M1)/(M2)\"). Undecided in every version (\"This paper does not choose between them\"). EPP2, weight by ensemble size, is kept only as a foil and is not mapped as a node (see gaps).",
       "reopen_if": null,
       "q": null,
       "a": null,
       "sources": [
         {
-          "label": "reviews/born-rule-readiness.md (#159)",
-          "url": "https://github.com/nous-clawds4/physics/pull/159"
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 5)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test (item 4)",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "physics#149: Mathematical Foundations v0.3 (T1-T3)",
+          "url": "https://github.com/nous-clawds4/physics/pull/149"
+        },
+        {
+          "label": "physics#156: v0.7 outline (symmetric costs)",
+          "url": "https://github.com/nous-clawds4/physics/pull/156"
+        },
+        {
+          "label": "physics#139: Statement of the Problem v0.1, questions (a)-(e)",
+          "url": "https://github.com/nous-clawds4/physics/pull/139"
+        },
+        {
+          "label": "Q-D1 to Q-D5: public-essays/mathematical-foundations/reviews/v0.1-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/reviews/v0.1-ontology.md"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
-      "sample": true,
+      "sample": false,
       "children": [
+        "a-anchored-count",
         "a-m1",
         "a-m2"
       ],
-      "depth": 3,
-      "weakest_parent": "a-obs-set-of-lumps",
-      "h_parent": 0.6400000000000001,
-      "h": 0.6400000000000001
-    },
-    {
-      "id": "a-arrival-probability",
-      "file": "a-arrival-probability.yaml",
-      "type": "answer",
-      "title": "Relative arrival-probability variable",
-      "synopsis": "The planned physical hypothesis. Open, nothing chosen.",
-      "parents": [
-        "q-detector-variable"
-      ],
-      "status": "open",
-      "hold": "L3",
-      "tag": "physical-hypothesis",
-      "rationale": null,
-      "reopen_if": null,
-      "q": 0.8,
-      "a": 0.5,
-      "sources": [],
-      "sample": false,
-      "children": [],
-      "depth": 4,
-      "weakest_parent": "q-detector-variable",
-      "h_parent": 0.76,
-      "h": 0.30400000000000005
-    },
-    {
-      "id": "a-option-f",
-      "file": "a-option-f.yaml",
-      "type": "answer",
-      "title": "Option F",
-      "synopsis": "Ontology's Option F, adopted as the working in-house C^k join law.",
-      "parents": [
-        "q-ck-join-law"
-      ],
-      "status": "accepted",
-      "hold": "L3",
-      "tag": "math-tool",
-      "rationale": "Adopted by David on 2026-09-07 as the working in-house join law (#104).",
-      "reopen_if": null,
-      "q": 0.8,
-      "a": 0.8,
-      "sources": [
+      "depth": 5,
+      "weakest_parent": "a-type-ii",
+      "h_parent": 0.6859,
+      "h": 0.6859,
+      "history": [
         {
-          "label": "physics#103: Ontology proposal, Option F",
-          "url": "https://github.com/nous-clawds4/physics/pull/103"
-        },
-        {
-          "label": "physics#104: Adopt Option F",
-          "url": "https://github.com/nous-clawds4/physics/pull/104"
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
         }
-      ],
-      "sample": false,
-      "children": [
-        "q-vstar"
-      ],
-      "depth": 4,
-      "weakest_parent": "q-ck-join-law",
-      "h_parent": 0.6400000000000001,
-      "h": 0.40960000000000013
+      ]
     },
     {
-      "id": "a-m1",
-      "file": "a-m1.yaml",
-      "type": "answer",
-      "title": "(M1)",
-      "synopsis": "The (M1) weighting, as named in the born-rule readiness notes. Open, not chosen.",
-      "parents": [
-        "q-weight-evolutions"
-      ],
-      "status": "open",
-      "hold": "L3",
-      "tag": "math-tool",
-      "rationale": null,
-      "reopen_if": null,
-      "q": 0.8,
-      "a": 0.5,
-      "sources": [
-        {
-          "label": "reviews/born-rule-readiness-scan.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness-scan.md"
-        }
-      ],
-      "sample": false,
-      "children": [],
-      "depth": 4,
-      "weakest_parent": "q-weight-evolutions",
-      "h_parent": 0.6400000000000001,
-      "h": 0.25600000000000006
-    },
-    {
-      "id": "a-m2",
-      "file": "a-m2.yaml",
-      "type": "answer",
-      "title": "(M2)",
-      "synopsis": "The (M2) weighting, as named in the born-rule readiness notes. Open, not chosen.",
-      "parents": [
-        "q-weight-evolutions"
-      ],
-      "status": "open",
-      "hold": "L3",
-      "tag": "math-tool",
-      "rationale": null,
-      "reopen_if": null,
-      "q": 0.8,
-      "a": 0.5,
-      "sources": [
-        {
-          "label": "reviews/born-rule-readiness-scan.md",
-          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/reviews/born-rule-readiness-scan.md"
-        }
-      ],
-      "sample": false,
-      "children": [],
-      "depth": 4,
-      "weakest_parent": "q-weight-evolutions",
-      "h_parent": 0.6400000000000001,
-      "h": 0.25600000000000006
-    },
-    {
-      "id": "q-vstar",
-      "file": "q-vstar.yaml",
+      "id": "q-realisation",
+      "file": "q-realisation.yaml",
       "type": "question",
-      "title": "V* or V^τ?",
-      "synopsis": "Under Option F, which vertex construction does the framework use?",
+      "title": "Must each type-(ii) edge be realised in some spacetime? ((a)/(b))",
+      "synopsis": "Should an edge from O^u to O'^u' require a connected analytic world in which a future-directed timelike geodesic joins occurrences of the two germs?",
       "parents": [
-        "a-option-f"
+        "a-type-ii"
       ],
       "status": null,
       "hold": "L3",
       "tag": null,
-      "rationale": null,
+      "rationale": "An open one-liner in v0.4 (#112), with a cost table in v0.5; re-costed and made lock-side in v0.6 after Claude #128 row 7 (Geometry #129 claim 1 ACCEPT: v0.5's cost row saying (a) forbids curvature-changing jumps was false). v0.8 B.2b logs it as moved to an open call. Compatibility (§2), if kept, is (a).",
       "reopen_if": null,
       "q": null,
       "a": null,
       "sources": [
         {
-          "label": "physics#106: V* extend-vs-not under Option F",
-          "url": "https://github.com/nous-clawds4/physics/pull/106"
+          "label": "physics#112: v0.4 prose (open one-liner)",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        },
+        {
+          "label": "physics#123: v0.5 prose (cost table)",
+          "url": "https://github.com/nous-clawds4/physics/pull/123"
+        },
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 7)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry: claim 1 ACCEPT",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
         }
       ],
-      "sample": true,
+      "sample": false,
+      "children": [
+        "a-real-a",
+        "a-real-b"
+      ],
+      "depth": 5,
+      "weakest_parent": "a-type-ii",
+      "h_parent": 0.6859,
+      "h": 0.6859,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "q-vertex-times",
+      "file": "q-vertex-times.yaml",
+      "type": "question",
+      "title": "When may a history branch (which germs are vertices)?",
+      "synopsis": "The per-vertex weight needs discrete branch points along each segment. What selects the candidate branch times along a geodesic?",
+      "parents": [
+        "a-type-ii"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": "The hard gate's second clause (branch points discrete in proper time along each segment) was added in v0.4 after Claude #105 §3.1.",
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "physics#105: Claude HOLD on v0.3 prose (§3.1)",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "physics#112: v0.4 prose (hard gate, two clauses)",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        }
+      ],
+      "sample": false,
       "children": [
         "a-vstar",
         "a-vtau"
       ],
       "depth": 5,
-      "weakest_parent": "a-option-f",
-      "h_parent": 0.40960000000000013,
-      "h": 0.40960000000000013
+      "weakest_parent": "a-type-ii",
+      "h_parent": 0.6859,
+      "h": 0.6859,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "a-vstar",
-      "file": "a-vstar.yaml",
+      "id": "a-alternation",
+      "file": "a-alternation.yaml",
       "type": "answer",
-      "title": "V*",
-      "synopsis": "The V* construction, pressure-tested under Option F.",
+      "title": "(A) Strict alternation, with an arrival flag",
+      "synopsis": "After a jump, a segment of positive proper time comes before the next decision. The process state is (O^u, a) with a in {seg, jump}, so a germ reached by a jump has one arm.",
       "parents": [
-        "q-vstar"
+        "q-composition"
       ],
-      "status": "rejected",
+      "status": "accepted",
       "hold": "L3",
-      "tag": "math-tool",
-      "rationale": "Superseded by V^τ (banners,",
-      "reopen_if": "SAMPLE placeholder, to be written by whoever rules on this node.",
-      "q": 0.8,
-      "a": 0.2,
+      "tag": "definition",
+      "rationale": "The v0.4 composition (alternation; Claude #105's reading C), made strict in v0.6 (#130) after #128 row 2. Geometry #129 QUALIFY: (A) does not remove arrival dependence; it is honest only as a Markov chain on the enlarged state (O^u, a), plus a named no-Zeno clause. Walk semantics follows (the weight acts per visit). Proper time is carried only along segments, so a history is no longer Paper 1's proper-time curve. Working Postulate, revisable (v0.7.1 §9). Its cost is carried, not resolved: the flag is one bit of history data outside §2's lock-side definition, which is open call T1 = Q-D5 (enlarge the state; drop (A); or keep (A) and carry the strain on Problem note 6). #139 (a)'s proper-time part sits under T1. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.8,
       "sources": [
         {
-          "label": "physics#106: V* extend-vs-not",
-          "url": "https://github.com/nous-clawds4/physics/pull/106"
+          "label": "physics#112: v0.4 prose (alternation)",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
         },
         {
-          "label": "physics#134: V* superseded by V^tau",
-          "url": "https://github.com/nous-clawds4/physics/pull/134"
+          "label": "physics#128: Claude HOLD on v0.5 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry: (A) only on the enlarged state",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline (arrival flag)",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        },
+        {
+          "label": "Q-D1 to Q-D5: public-essays/mathematical-foundations/reviews/v0.1-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-essays/mathematical-foundations/reviews/v0.1-ontology.md"
         }
       ],
       "sample": false,
       "children": [],
       "depth": 6,
-      "weakest_parent": "q-vstar",
-      "h_parent": 0.40960000000000013,
-      "h": 0.06553600000000002
+      "weakest_parent": "q-composition",
+      "h_parent": 0.6859,
+      "h": 0.521284,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     },
     {
-      "id": "a-vtau",
-      "file": "a-vtau.yaml",
+      "id": "a-jump-bound",
+      "file": "a-jump-bound.yaml",
       "type": "answer",
-      "title": "V^τ",
-      "synopsis": "The V^τ construction that superseded V*.",
+      "title": "(B) Consecutive jumps, counted under a bound N",
+      "synopsis": "Let jumps follow jumps with no segment between, counted with multiplicity up to a fixed bound N.",
       "parents": [
-        "q-vstar"
+        "q-composition"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "Offered by Claude #128 as one fix for clause (2). Rejected by Geometry over #128 (#129; v0.6 outline): on the instance, chains of edges are infinite, so N would be a law-like number imposed on histories, and making it a property of R would restart the leftover inventory of formal properties of R. T1's \"drop (A)\" column lists this as the law-like replacement (v0.7.1 §9). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "From the stated reasons: an R whose edge chains are finite, so that a bound is not law-like, or a way to make the bound a property of R that does not restart the leftover inventory.",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 2)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline (rejected alternatives)",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-composition",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-target-avoid",
+      "file": "a-target-avoid.yaml",
+      "type": "answer",
+      "title": "(C) Target avoidance: no jump lands on a vertex",
+      "synopsis": "Require every jump target to lie off the slice V^τ, so alternation is automatic and the process is Markov on O^u alone.",
+      "parents": [
+        "q-composition"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "Added by Geometry (#129: \"Option (C), not in #128\"). Its gain is real: Markov on O^u alone, no enlarged state. Rejected because it excludes the only worked instance, whose jump targets are all turning points and hence vertices (v0.7.1 §4.2). Record note: a draft of the v0.6 outline also used \"(C)\" for returning to Paper 1's count; Ontology #133 records the fix. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "A worked instance (a stated, uniform rule) whose jump targets avoid V^τ, so that (C) no longer excludes every example.",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#129: Geometry pressure test (option C)",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "physics#133: Ontology self-review of v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/133"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-composition",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-option-e",
+      "file": "a-option-e.yaml",
+      "type": "answer",
+      "title": "Option E residue: graph joins with discontinuous type-(ii) jumps",
+      "synopsis": "Analytic-geodesic segments joined by discontinuous type-(ii) jumps plus incidence in a graph. The arms at a vertex are the continue arm together with the R-successors.",
+      "parents": [
+        "q-join-law"
       ],
       "status": "accepted",
       "hold": "L3",
       "tag": "math-tool",
-      "rationale": "SAMPLE placeholder.",
+      "rationale": "Geometry #118: what escapes the CWS singleton for branching is a discontinuous jump plus discrete graph incidence, the Option E residue; pairing it with finite-k matching \"does not buy branching power\". Public from v0.5 (#119, #123), working and abandonable through v0.7.1 (§4.2). v0.5's header: the relocated HOLE is \"cleared as a definition (B_R given R)\". Record note: the arm set changed across versions (the v0.4 cover says the arms are the out-star; v0.6 on counts the continue arm too, after #128). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
       "reopen_if": null,
       "q": 0.8,
       "a": 0.8,
       "sources": [
         {
-          "label": "physics#134",
-          "url": "https://github.com/nous-clawds4/physics/pull/134"
+          "label": "physics#118: Geometry: demote F to E",
+          "url": "https://github.com/nous-clawds4/physics/pull/118"
         },
         {
-          "label": "physics#123: v0.5 prose, V^τ honesty",
+          "label": "physics#119: v0.5 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/119"
+        },
+        {
+          "label": "physics#123: v0.5 prose",
           "url": "https://github.com/nous-clawds4/physics/pull/123"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
         }
       ],
       "sample": false,
       "children": [],
       "depth": 6,
-      "weakest_parent": "q-vstar",
-      "h_parent": 0.40960000000000013,
-      "h": 0.2621440000000001
+      "weakest_parent": "q-join-law",
+      "h_parent": 0.6859,
+      "h": 0.43897600000000003,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-option-f",
+      "file": "a-option-f.yaml",
+      "type": "answer",
+      "title": "Option F: finite-k truncated-jet matching at joins, plus graph incidence",
+      "synopsis": "Analytic-geodesic pieces on open edges; the jet and u agree through a fixed finite order k of at least 1 at each join; the arms come from graph incidence.",
+      "parents": [
+        "q-join-law"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Ontology's proposal (#103), adopted by David on 2026-09-07 as the working in-house join law (#104), and public in v0.4 (#108, #112). Rejected after Claude Fable 5.1's HOLD on v0.4 (#117): Geometry accepted Claim A (#118). Finite-k matching is vacuous at k = 1 between distinct lumps (every 1-jet is the same in u-adapted normal coordinates), prohibitive at k of 2 or more for curvature-changing jumps (the 2-jet is the Riemann tensor), and cannot create a branching edge; F is demoted to E. #134's banner withdraws the Option F recommendation (\"finite k is not the HOLE escape\", Claude #128 row 3). Record unclear: #104 records David's adoption; the demotion found here was recommended by Geometry (#118), made in the v0.5 outline (#119) and passed by its panels (#120 to #122), with no separate signature from David located. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "Mapper's wording of #118's QUALIFY (truncated-jet language may stay as continue-arm housekeeping): only if a canonical comparison of jets across distinct lumps were found under which finite-k agreement is neither vacuous (k = 1) nor forbids curvature change (k of 2 or more).",
+      "q": 0.8,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#103: Ontology proposal: Option F",
+          "url": "https://github.com/nous-clawds4/physics/pull/103"
+        },
+        {
+          "label": "physics#104: adopt Option F (David, 2026-09-07)",
+          "url": "https://github.com/nous-clawds4/physics/pull/104"
+        },
+        {
+          "label": "physics#112: v0.4 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        },
+        {
+          "label": "physics#117: Claude Fable 5.1 HOLD on v0.4 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/117"
+        },
+        {
+          "label": "physics#118: Geometry: Claims A/B ACCEPT; demote F to E",
+          "url": "https://github.com/nous-clawds4/physics/pull/118"
+        },
+        {
+          "label": "physics#134: banners",
+          "url": "https://github.com/nous-clawds4/physics/pull/134"
+        },
+        {
+          "label": "papers/piecewise-geodesic-Ck-graph-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/piecewise-geodesic-Ck-graph-ontology.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-join-law",
+      "h_parent": 0.6859,
+      "h": 0.27436,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-anchored-count",
+      "file": "a-anchored-count.yaml",
+      "type": "answer",
+      "title": "Anchoring the count removes (M2)'s cut dependence at no cost (v0.7 wording)",
+      "synopsis": "v0.7 said the depth-1 anchor is the only cut whose weights are functions of the current state, and that a distant count strains Problem note 6 only \"unless it is anchored\".",
+      "parents": [
+        "q-measure"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "method",
+      "rationale": "The losing side of Claude Opus 5.5's HOLD on v0.7 prose (#168), confirmed by Geometry (#169, CONFIRM HOLD, narrow). #169: a count re-anchored at each state gives state-function weights at every horizon, so depth 1 is not exclusive (what is particular to depth 1 is only that it reads nothing of R beyond the current arms); and re-anchoring removes cut dependence but in general gives up equal weight at a fixed cut (C13's tree: 1/10 and 1/15 against 1/12 at the fixed cut). Replaced in v0.7.1 (P1 to P5, #170). Geometry withdrew the part of its #162 note that had read the paragraph as balanced. This rejection corrects a claim about both options; it does not choose between (M1) and (M2). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "The cases the record names where state-function weights and equal weight at a fixed cut hold together: D-constancy on the cut (C13), or a finite tree counted to its completed histories. If the relevant R were shown to give only such trees, the v0.7 sentence would hold there.",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#160: v0.7 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/160"
+        },
+        {
+          "label": "physics#162: Geometry review of v0.7 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/162"
+        },
+        {
+          "label": "physics#168: Claude Opus 5.5 HOLD on v0.7 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/168"
+        },
+        {
+          "label": "physics#169: Geometry: CONFIRM HOLD (narrow), P1-P8",
+          "url": "https://github.com/nous-clawds4/physics/pull/169"
+        },
+        {
+          "label": "physics#170: v0.7.1 prose (patch)",
+          "url": "https://github.com/nous-clawds4/physics/pull/170"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-measure",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-m1",
+      "file": "a-m1.yaml",
+      "type": "answer",
+      "title": "(M1) Per-vertex equal weight (EPP1)",
+      "synopsis": "Each arm in force at a state gets equal weight. It is the count at the depth-1 cut anchored at the current state, so the weights are functions of that state.",
+      "parents": [
+        "q-measure"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "method",
+      "rationale": "Open, with costs on both sides and no lean. The paper runs with EPP1 as a named working postulate from v0.3 on (pedigree: the per-split rule applied in MMWI 2006 and stated as SHPMP 2008 Definition 3), but records the choice as undecided. For: no named cut; state-function weights fit Problem note 6. Costs (v0.7.1 §9): a named postulate (Problem note 9); it does not carry Paper 1's uniqueness thesis; one chosen product measure on a continuum of completed histories in the model without (a) (C16); unequal weights on co-existing evolutions (C12: 1/6 against 1/2, where the count gives 1/4 each), which in the countable (a) case fall on countably many evolutions of one kind, Paper 1 §6's refusal case (C33). Geometry qualified Claude #154's R7 (#155), and the v0.7 outline did not adopt its framing of (M1) as \"overstated\" (v0.7 outline, a lean neutralised). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#98: v0.3 prose (EPP1)",
+          "url": "https://github.com/nous-clawds4/physics/pull/98"
+        },
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 5)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#154: Claude Opus 5.5 on v0.6 prose (R7)",
+          "url": "https://github.com/nous-clawds4/physics/pull/154"
+        },
+        {
+          "label": "physics#155: Geometry pressure test of #154",
+          "url": "https://github.com/nous-clawds4/physics/pull/155"
+        },
+        {
+          "label": "physics#156: v0.7 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/156"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-measure",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-m2",
+      "file": "a-m2.yaml",
+      "type": "answer",
+      "title": "(M2) Paper 1's count of distinct evolutions at a named cut",
+      "synopsis": "Return to Paper 1's measure: count the distinct evolutions at a named finite cut, giving co-existing evolutions equal weight.",
+      "parents": [
+        "q-measure"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "method",
+      "rationale": "Open, with costs on both sides and no lean. For: it carries Paper 1's uniqueness thesis at that cut and gives distinct evolutions equal weight; it is Paper 1's own escape clause, \"countable at a grain\". Costs (v0.7.1 §9): the cut is a named extra (Problem note 9); a prefix's weight depends on the cut, the objection on which SHPMP 2008 rejected the simple count; completed histories may be infinite, so it needs a cut or grain to act at all, also under the (a)-restriction; it carries the maximal-entropy random walk hazard of §7; its next-step weights depend on where the cut sits (Problem note 6), and re-anchoring at each state removes that but in general gives up equal weight at a fixed cut (#168, #169). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "Paper 1, papers/observer-space-ontology.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/observer-space-ontology.md"
+        },
+        {
+          "label": "physics#130: v0.6 outline (Paper 1 measure honesty)",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "physics#156: v0.7 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/156"
+        },
+        {
+          "label": "physics#168: Claude Opus 5.5 HOLD on v0.7 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/168"
+        },
+        {
+          "label": "physics#169: Geometry: CONFIRM HOLD (narrow)",
+          "url": "https://github.com/nous-clawds4/physics/pull/169"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-measure",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-real-a",
+      "file": "a-real-a.yaml",
+      "type": "answer",
+      "title": "(a) Realised edges",
+      "synopsis": "Every edge is realised by a future-directed timelike geodesic between occurrences of the two germs in one analytic world. Lock-side form: the target lies on a curvelet through the source lump (in F(O)), off the source's own curvelet.",
+      "parents": [
+        "q-realisation"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "Open; the record takes no side and neither does this node. What the record gives for (a): it is lock-side and world-free; it forbids every edge whose target lies off F(O), including all cross-continuation jumps (flat to FLRW; Schwarzschild M = 1 to M = 2); it permits curvature-changing jumps within one continuation class (K rises by a factor of about 3.8, C2). Costs recorded: the worked Kretschmann rule loses one edge at each turning point of the instance (outward at the periastron, inward at the apastron); its (a)-restriction branches only transiently (one jump at c = 0.1, 12 to 14 at c = 0.01) with countably many completed histories (C33, v0.7 on); the admissible targets of one germ form a continuum (C4), so (a) is a necessary condition, not a law. #168's optional clause attributing the transient to circularisation was declined as not borne out by the census (#169). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 7)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry: claim 1 ACCEPT",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "physics#156: v0.7 outline ((a) transient)",
+          "url": "https://github.com/nous-clawds4/physics/pull/156"
+        },
+        {
+          "label": "physics#169: Geometry pressure test of #168 (declined clause)",
+          "url": "https://github.com/nous-clawds4/physics/pull/169"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-realisation",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "83ff2d66d97b0428c47b7dc044c798bfaf5b1c5b",
+          "date": "2026-09-30T15:54:40-07:00",
+          "subject": "question-graph: scope a-real-a/a-real-b Kretschmann (a) wording to the instance (#201 R1 as extended by #203) (#206)",
+          "url": "https://github.com/nous-clawds4/physics/commit/83ff2d66d97b0428c47b7dc044c798bfaf5b1c5b"
+        },
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-real-b",
+      "file": "a-real-b.yaml",
+      "type": "answer",
+      "title": "(b) No realisation required",
+      "synopsis": "Edges need not be realised in any spacetime: cross-continuation edges and same-class edges that fail (a) are both allowed.",
+      "parents": [
+        "q-realisation"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "definition",
+      "rationale": "Open; the record takes no side and neither does this node. For (b): it keeps the worked Kretschmann rule as stated, one edge of which at each turning point of the instance fails (a) (outward at the periastron, inward at the apastron), and it admits the cross-continuation jumps \"a measurement picture would want\" (v0.7.1 §4.2). Costs the record attaches to the model without (a): its completed histories form a continuum (C16, a proof), and Paper 1 §6 calls a continuum with no grain \"a failure of the program\" unless a grain is supplied; under the rule as stated, typical histories are jump-dominated and fail both (J1) and (J2) (C17). Not-(a) is not the same as cross-continuation. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "physics#156: v0.7 outline (C16 proof)",
+          "url": "https://github.com/nous-clawds4/physics/pull/156"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-realisation",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "83ff2d66d97b0428c47b7dc044c798bfaf5b1c5b",
+          "date": "2026-09-30T15:54:40-07:00",
+          "subject": "question-graph: scope a-real-a/a-real-b Kretschmann (a) wording to the instance (#201 R1 as extended by #203) (#206)",
+          "url": "https://github.com/nous-clawds4/physics/commit/83ff2d66d97b0428c47b7dc044c798bfaf5b1c5b"
+        },
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-vstar",
+      "file": "a-vstar.yaml",
+      "type": "answer",
+      "title": "V*: vertex times where some compatible world ends (extend-versus-not)",
+      "synopsis": "Mark branch times along a curvelet where members of the world ensemble stop being extendible, so vertices come from ensemble events.",
+      "parents": [
+        "q-vertex-times"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Pressure-tested under Option F (#106, verdict then \"adopt V* with caveats\"; toy #107) and public in v0.4 (#112). Rejected after Claude #117 Claim B, accepted by Geometry #118: under §2's ensemble with no inextendibility, extend-versus-not marks a continuum of times (Minkowski space minus one point ends the geodesic at any chosen time, C24), and inextendibility alone does not repair it (conical defect, C25). Choosing vertex times by which ensemble members end would also be a timing vote by the ensemble (\"E-smuggling\"). Superseded by V^τ (#134 banner, after Claude #128); papers/Vstar-extend-vs-not.md carries \"superseded\", and the toy was retired as a V* demo. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "From the record's own escape clause (v0.7.1 §5.1): an explicitly chosen, motivated discrete sub-ensemble of E_W (a grain on E_W), or an ensemble restriction that makes ending times discrete, which inextendibility alone does not do (C25).",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#106: V* extend-vs-not pressure test",
+          "url": "https://github.com/nous-clawds4/physics/pull/106"
+        },
+        {
+          "label": "physics#107: minimal toy",
+          "url": "https://github.com/nous-clawds4/physics/pull/107"
+        },
+        {
+          "label": "physics#112: v0.4 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        },
+        {
+          "label": "physics#117: Claude HOLD on v0.4 prose (Claim B)",
+          "url": "https://github.com/nous-clawds4/physics/pull/117"
+        },
+        {
+          "label": "physics#118: Geometry: Claim B ACCEPT",
+          "url": "https://github.com/nous-clawds4/physics/pull/118"
+        },
+        {
+          "label": "physics#134: banner: V* superseded by V^tau",
+          "url": "https://github.com/nous-clawds4/physics/pull/134"
+        },
+        {
+          "label": "papers/Vstar-extend-vs-not.md",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/papers/Vstar-extend-vs-not.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 6,
+      "weakest_parent": "q-vertex-times",
+      "h_parent": 0.6859,
+      "h": 0.32580249999999994,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-vtau",
+      "file": "a-vtau.yaml",
+      "type": "answer",
+      "title": "V^τ: a lock-side slice along each curvelet",
+      "synopsis": "Vertices are oriented germs where a lock-side scalar (for example the Kretschmann scalar K) has an isolated critical point along the curvelet, or crosses a named level. One-variable analyticity makes them discrete per curvelet.",
+      "parents": [
+        "q-vertex-times"
+      ],
+      "status": "accepted",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Introduced in v0.5 (#119, #123), then costed after Claude #128 row 2 and Geometry #129 item 5 (QUALIFY): the slice is empty on Minkowski, de Sitter and every locally symmetric lump; it is codimension one, not a discrete set; polynomial invariants are blind on VSI lumps (v0.7.1 §5.1). Which scalar, and critical point versus level, stays open (§9 Open list). It is a named extra, a candidate, not a theorem that V is discrete. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.8,
+      "sources": [
+        {
+          "label": "physics#119: v0.5 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/119"
+        },
+        {
+          "label": "physics#123: v0.5 prose (V^tau)",
+          "url": "https://github.com/nous-clawds4/physics/pull/123"
+        },
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose (row 2)",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test (item 5)",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "q-law-of-r"
+      ],
+      "depth": 6,
+      "weakest_parent": "q-vertex-times",
+      "h_parent": 0.6859,
+      "h": 0.521284,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "q-law-of-r",
+      "file": "q-law-of-r.yaml",
+      "type": "question",
+      "title": "What is the law of R?",
+      "synopsis": "Which rule, stated from lock-side data, gives the type-(ii) edges and their targets? This is the relocated HOLE's final address.",
+      "parents": [
+        "a-type-ii",
+        "a-vtau"
+      ],
+      "status": null,
+      "hold": "L3",
+      "tag": null,
+      "rationale": "Open in every version (\"No law of R is written\"). v0.7.1's header gives it as the final address of the relocated HOLE, with its motivation and the choice of slice. Composition item 1 puts R's source set inside V^τ, hence the second parent. The singleton-or-continuum dilemma lives here (soft Prop. 13): kinematics does not single out a dynamics, so a countable star is a new physical choice. The law-of-R scoping work (#178, #182, #185 and #187, all merged) comes after v0.7.1 and is not mapped.",
+      "reopen_if": null,
+      "q": null,
+      "a": null,
+      "sources": [
+        {
+          "label": "physics#105: Claude HOLD on v0.3 prose (relocation)",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "physics#178: law-of-R scoping note (scoping only)",
+          "url": "https://github.com/nous-clawds4/physics/pull/178"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [
+        "a-hand-listed",
+        "a-kretschmann"
+      ],
+      "depth": 7,
+      "weakest_parent": "a-vtau",
+      "h_parent": 0.521284,
+      "h": 0.521284,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-hand-listed",
+      "file": "a-hand-listed.yaml",
+      "type": "answer",
+      "title": "A hand-listed digraph as the controlled example",
+      "synopsis": "Meet the exit gate (a controlled example under an explicit R) with a small graph drawn by hand, for example two vertices with a named type-(ii) out.",
+      "parents": [
+        "q-law-of-r"
+      ],
+      "status": "rejected",
+      "hold": "L3",
+      "tag": "method",
+      "rationale": "The losing side of Claude Fable 5.1's HOLD on v0.3 (#105): the new exit gate \"is met by a hand-drawn two-vertex graph, so it is not a test\". From v0.4 the firewall says the paper does not count a hand-listed digraph as a controlled public example; from v0.5 the public gate asks for a rule that is stated, uniform and motivated. The v0.4 toy (papers/B-ge2-minimal-toy.md, #107) was existence-in-form only and is now retired. Since no rule meets the motivation clause, the bar in force is \"uniform, not a hand list\" (v0.7.1 §1). Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": "The record gives none; this is a methodological gate. Mapper's proposal: only if whoever holds the public-example gate revises it.",
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#105: Claude Fable 5.1 HOLD on v0.3 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/105"
+        },
+        {
+          "label": "physics#107: minimal toy",
+          "url": "https://github.com/nous-clawds4/physics/pull/107"
+        },
+        {
+          "label": "physics#112: v0.4 prose (firewall)",
+          "url": "https://github.com/nous-clawds4/physics/pull/112"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 8,
+      "weakest_parent": "q-law-of-r",
+      "h_parent": 0.521284,
+      "h": 0.24760989999999997,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "a-kretschmann",
+      "file": "a-kretschmann.yaml",
+      "type": "answer",
+      "title": "The Kretschmann rule on a bound Schwarzschild orbit (unadopted worked model)",
+      "synopsis": "A stated, uniform rule read out of the germ at the Kretschmann-scalar vertices of a bound Schwarzschild orbit (the ±εn̂ rule). It is the only worked instance, and it is not adopted.",
+      "parents": [
+        "q-law-of-r"
+      ],
+      "status": "open",
+      "hold": "L3",
+      "tag": "math-tool",
+      "rationale": "Open: never adopted (\"It adopts no R\") and never rejected. First used by Claude in #117; carried into the public paper from v0.6 via #128 and #129 (orbit [10, 20]). It meets the bar in force (stated, uniform) and fails the motivated gate. As stated it models the schema without (a): typical histories are jump-dominated (jumps are 2/3 of decisions in expectation) and it fails (J1) and (J2) (C17, C34). Its (a)-restriction is also a model, with transient branching (C33). The paper uses it as evidence for \"not fatal\", not as a candidate law. Ratings (q, a): proposal, pending David's signature. Hold L3 (weakly held).",
+      "reopen_if": null,
+      "q": 0.95,
+      "a": 0.5,
+      "sources": [
+        {
+          "label": "physics#117: Claude Fable 5.1 on v0.4 prose (Kretschmann rule)",
+          "url": "https://github.com/nous-clawds4/physics/pull/117"
+        },
+        {
+          "label": "physics#128: Claude HOLD on v0.5 prose",
+          "url": "https://github.com/nous-clawds4/physics/pull/128"
+        },
+        {
+          "label": "physics#129: Geometry pressure test (orbit)",
+          "url": "https://github.com/nous-clawds4/physics/pull/129"
+        },
+        {
+          "label": "physics#130: v0.6 outline",
+          "url": "https://github.com/nous-clawds4/physics/pull/130"
+        },
+        {
+          "label": "versions/v0.7.1-prose.md (current draft)",
+          "url": "https://github.com/nous-clawds4/physics/blob/5acf9d39ee387b8b923bd06cff11a20e1e88532c/public-papers/observer-space-framework/versions/v0.7.1-prose.md"
+        }
+      ],
+      "sample": false,
+      "children": [],
+      "depth": 8,
+      "weakest_parent": "q-law-of-r",
+      "h_parent": 0.521284,
+      "h": 0.24760989999999997,
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
     }
   ],
   "versions": [
     {
-      "id": "sample-v1",
-      "title": "Sample version 1 (SAMPLE)",
-      "synopsis": "Illustrative selection only, not a real paper version.",
+      "id": "v0.3",
+      "title": "Framework paper v0.3 (v0.3-prose.md)",
+      "synopsis": "Type-(ii) R introduced; CWS demoted to the type-(i) null baseline. No join law, vertex engine or composition is stated yet (Claude #105). Open: the law of R. Realisation of edges is not yet posed as a question (v0.3 has a compatibility relation, later identified with (a)); the measure is run as EPP1 on discrete arms. Rejected at this version: CWS as the branching law. Source: physics#98; versions/v0.3-prose.md.",
       "selects": [
-        "a-no-privileged-matter",
-        "a-obs-set-of-lumps",
-        "a-branch-points"
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii"
       ],
       "sources": [],
-      "file": "versions/sample-v1.yaml",
+      "file": "versions/v0.3.yaml",
       "path": [
-        "a-branch-points",
-        "q-describe-branching",
-        "a-observer-physical-system",
-        "a-obs-set-of-lumps",
-        "q-meaning-observer-space",
-        "a-no-privileged-matter",
-        "q-which-objects-observe"
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
       ]
     },
     {
-      "id": "sample-v2",
-      "title": "Sample version 2 (SAMPLE)",
-      "synopsis": "Illustrative selection only, not a real paper version.",
+      "id": "v0.4",
+      "title": "Framework paper v0.4 (v0.4-prose.md)",
+      "synopsis": "Selects Option F and V*, both accepted at the time and rejected since (#118, #134), so the viewer flags these two selections; that flag is expected in a retro-map, where status is current and the selection historical. The composition is written here as plain alternation (\"a history alternates\"), with neither strictness nor the arrival flag, so a-alternation, which is (A) as made strict in v0.6, is not selected (Claude #128 row 2). EPP1 is a named postulate with empty domain; a-m1 is not selected, since (M1)/(M2) is framed as an undecided call only from v0.6 and stays open. Realisation of edges named as an open one-liner. Rejected at this version: a hand-listed digraph as the controlled example (#105). Source: physics#112; versions/v0.4-prose.md.",
       "selects": [
-        "a-no-privileged-matter",
-        "a-obs-set-of-lumps",
-        "a-branch-points",
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii",
         "a-option-f",
+        "a-vstar"
+      ],
+      "sources": [],
+      "file": "versions/v0.4.yaml",
+      "path": [
+        "a-vstar",
+        "q-vertex-times",
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-option-f",
+        "q-join-law",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "v0.5",
+      "title": "Framework paper v0.5 (v0.5-prose.md)",
+      "synopsis": "Option E residue and V^τ replace Option F and V* (#117, #118). (a)/(b) gets a cost table, later corrected (#128, #129). The composition is still plain alternation with no arrival flag, so a-alternation is not selected: Claude #128 row 2 found clause (2) held per segment, not per history. EPP1 is a named postulate with empty domain and a path-count alternative listed as open; a-m1 is not selected ((M1)/(M2) is framed only from v0.6 and stays open). Source: physics#123; versions/v0.5-prose.md.",
+      "selects": [
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii",
+        "a-option-e",
         "a-vtau"
       ],
       "sources": [],
-      "file": "versions/sample-v2.yaml",
+      "file": "versions/v0.5.yaml",
       "path": [
         "a-vtau",
-        "q-vstar",
-        "a-option-f",
-        "q-ck-join-law",
-        "a-obs-set-of-lumps",
-        "q-meaning-observer-space",
-        "a-observer-physical-system",
-        "a-branch-points",
-        "q-describe-branching",
-        "a-no-privileged-matter",
-        "q-which-objects-observe"
+        "q-vertex-times",
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-option-e",
+        "q-join-law",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "v0.6",
+      "title": "Framework paper v0.6 (v0.6-prose.md)",
+      "synopsis": "Adds a-alternation to v0.5's selection: strict alternation with the arrival flag (#130). The rest changed in open and rejected nodes: (B) and (C) rejected; (a)/(b) re-costed and lock-side; (M1)/(M2) framed as an undecided call; the Kretschmann model carried as an unadopted example (#128, #129, #130). Source: physics#135; versions/v0.6-prose.md.",
+      "selects": [
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii",
+        "a-option-e",
+        "a-vtau",
+        "a-alternation"
+      ],
+      "sources": [],
+      "file": "versions/v0.6.yaml",
+      "path": [
+        "a-alternation",
+        "q-composition",
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-vtau",
+        "q-vertex-times",
+        "a-option-e",
+        "q-join-law",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "v0.7.1",
+      "title": "Framework paper v0.7.1 (v0.7.1-prose.md)",
+      "synopsis": "Same accepted selection. Patch after Claude #168 and Geometry #169: the v0.7 claim that anchoring removes cut dependence at no cost is rejected (a-anchored-count). Source: physics#170; versions/v0.7.1-prose.md.",
+      "selects": [
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii",
+        "a-option-e",
+        "a-vtau",
+        "a-alternation"
+      ],
+      "sources": [],
+      "file": "versions/v0.7.1.yaml",
+      "path": [
+        "a-alternation",
+        "q-composition",
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-vtau",
+        "q-vertex-times",
+        "a-option-e",
+        "q-join-law",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
+      ]
+    },
+    {
+      "id": "v0.7",
+      "title": "Framework paper v0.7 (v0.7-prose.md)",
+      "synopsis": "Same accepted selection. Changes in open nodes only: the (a)-restriction's transient branching (C33), the (M1)/(M2) cost lines made symmetric, T1-T3 and Q-D1-Q-D5 carried as open calls (#156). Source: physics#160; versions/v0.7-prose.md.",
+      "selects": [
+        "a-root",
+        "a-jet-direction",
+        "a-world-analytic",
+        "a-type-ii",
+        "a-option-e",
+        "a-vtau",
+        "a-alternation"
+      ],
+      "sources": [],
+      "file": "versions/v0.7.yaml",
+      "path": [
+        "a-alternation",
+        "q-composition",
+        "a-type-ii",
+        "q-branching",
+        "a-jet-direction",
+        "q-observer-object",
+        "a-root",
+        "a-vtau",
+        "q-vertex-times",
+        "a-option-e",
+        "q-join-law",
+        "a-world-analytic",
+        "q-what-is-a-world"
+      ],
+      "history": [
+        {
+          "sha": "33c06d29419bfb3a3a577dcc153f2a8e991fd11e",
+          "date": "2026-09-30T15:35:08-07:00",
+          "subject": "Question-graph pilot (Path of 42): retro-map of framework v0.3–v0.7.1 (#199)",
+          "url": "https://github.com/nous-clawds4/physics/commit/33c06d29419bfb3a3a577dcc153f2a8e991fd11e"
+        }
       ]
     }
   ],
-  "warnings": [],
+  "warnings": [
+    "version v0.4: selects a-option-f, which is rejected",
+    "version v0.4: selects a-vstar, which is rejected"
+  ],
   "errors": []
 }

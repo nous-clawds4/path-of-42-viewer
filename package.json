@@ -1,9 +1,11 @@
 {
   "name": "path-of-42-viewer",
   "version": "1.0.0",
-  "description": "Static interactive viewer for Path of 42 question graphs",
+  "description": "Static interactive viewer for Path of 42 question graphs (live: the physics pilot)",
   "scripts": {
-    "build": "node build/build.mjs --in sample/question-graph --out site/data/graph.json",
+    "build": "npm run build:sample && npm run build:pilot",
+    "build:sample": "node build/build.mjs --in sample/question-graph --out site/data/sample.json --strict",
+    "build:pilot": "node build/build.mjs --in ${PHYSICS_DIR:-../physics}/public-papers/observer-space-framework/question-graph --out site/data/graph.json --git --repo-url https://github.com/nous-clawds4/physics --meta-file config/physics-pilot.yaml",
     "test": "node test/run.mjs",
     "serve": "python3 -m http.server 8000 -d site",
     "vendor": "cp node_modules/cytoscape/dist/cytoscape.min.js node_modules/cytoscape-dagre/cytoscape-dagre.js node_modules/dagre/dist/dagre.min.js site/vendor/"

@@ -1,0 +1,11 @@
+# Display overlay for the physics pilot graph (nous-clawds4/physics,
+# public-papers/observer-space-framework/question-graph). Passed to the build with
+# --meta-file; it only sets banner text, never node data. The source's own graph.yaml
+# (title, note, repo_url, ...) still applies; keys here win where they overlap.
+badge: "PILOT · PROPOSALS"
+proposal: true
+notice: >-
+  Physics pilot retro-mapping of the observer-space framework paper versions, not a ruling.
+  Every q, a and hold value is a proposal, pending David's signature.
+notice_link: https://github.com/nous-clawds4/physics/blob/main/public-papers/observer-space-framework/question-graph/index.md
+notice_link_label: Method and caveats (index.md)

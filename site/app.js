@@ -107,6 +107,11 @@
         cy.elements().addClass('dim'); hits.removeClass('dim').addClass('match');
         $('status').textContent = `${hits.length} match${hits.length === 1 ? '' : 'es'}`;
       } else updateStatus();
+      if (v && !q) {
+        // Version-level build warnings (e.g. a historical version selecting a since-rejected answer).
+        const vw = G.warnings.filter((w) => w.startsWith(`version ${v.id}:`)).map((w) => w.slice(`version ${v.id}: `.length));
+        if (vw.length) $('status').textContent += ` · ${v.id}: ${vw.join('; ')}`;
+      }
     });
   }
 
@@ -115,7 +120,9 @@
     G.nodes.forEach((n) => { if (n.status in c) c[n.status]++; });
     const qn = G.nodes.filter((n) => n.type === 'question').length;
     const probs = (G.errors.length ? ` · ${G.errors.length} build errors` : '') + (G.warnings.length ? ` · ${G.warnings.length} warnings` : '');
-    $('status').textContent = `${G.nodes.length} nodes: ${qn} questions, ${c.accepted} accepted, ${c.open} open, ${c.rejected} rejected${probs}`;
+    const srcc = G.meta.source_commit ? ` · source ${G.meta.source_commit.slice(0, 7)}` : '';
+    $('status').title = [...G.errors.map((e) => `error: ${e}`), ...G.warnings.map((w) => `warning: ${w}`)].join('\n');
+    $('status').textContent = `${G.nodes.length} nodes: ${qn} questions, ${c.accepted} accepted, ${c.open} open, ${c.rejected} rejected${probs}${srcc}`;
   }
 
   function link(id) { const n = byId.get(id); return n ? `<a href="#node=${encodeURIComponent(id)}" data-node="${esc(id)}">${esc(n.title)}</a> <span class="muted">(${esc(n.type === 'answer' ? n.status : 'question')})</span>` : esc(id); }
@@ -138,13 +145,14 @@
     const warns = [...G.warnings, ...G.errors].filter((w) => w.startsWith(id + ':'));
     const base = G.meta.source_base_url;
     let h = '';
-    h += `<div class="chips">${sample ? '<span class="chip sample">SAMPLE</span>' : ''}<span class="chip">${esc(n.type)}${n.parents.length ? '' : ' · root'}</span>`;
+    const proposal = !sample && G.meta.proposal;
+    h += `<div class="chips">${sample ? '<span class="chip sample">SAMPLE</span>' : ''}${proposal ? '<span class="chip proposal" title="q, a and hold are proposals, pending signature">PROPOSAL</span>' : ''}<span class="chip">${esc(n.type)}${n.parents.length ? '' : ' · root'}</span>`;
     if (n.status) h += `<span class="chip ${esc(n.status)}">${esc(n.status)}</span>`;
     if (tag) h += `<span class="chip"><b class="tb" style="background:${tag.color}">${tag.letter}</b> ${esc(tag.label)}</span>`;
     if (n.hold) h += `<span class="chip" title="hold level (L0–L4)">${esc(n.hold)}</span>`;
     h += `</div><h2>${esc(n.title)}</h2>`;
     if (n.synopsis) h += `<p>${esc(n.synopsis)}</p>`;
-    h += `<h3>Hold number${sample ? ' <span class="chip sample" style="font-size:10px">sample values</span>' : ''}</h3>`;
+    h += `<h3>Hold number${sample ? ' <span class="chip sample" style="font-size:10px">sample values</span>' : ''}${proposal ? ' <span class="chip proposal" style="font-size:10px">proposed values, pending signature</span>' : ''}</h3>`;
     h += `<table class="ratings"><tr><td>q</td><td>${fmt(n.q)}</td><td class="muted">question worth asking?</td></tr><tr><td>a</td><td>${fmt(n.a)}</td><td class="muted">best answer?</td></tr><tr><td>h</td><td>${fmt(n.h)}</td><td><div class="hbar"><div style="width:${(n.h ?? 0) * 100}%"></div></div></td></tr></table>`;
     h += `<p style="font-size:12px">${hLine(n)}</p>`;
     if (n.rationale || n.status === 'rejected') h += `<h3>${n.status === 'rejected' ? 'Why rejected' : 'Rationale'}</h3><div class="box">${n.rationale ? esc(n.rationale) : '<span class="warn">missing</span>'}</div>`;
@@ -189,11 +197,20 @@
     const title = G.meta.title || '';
     $('graph-title').textContent = title ? `· ${title}` : '';
     document.title = `The Path of 42${title ? ' · ' + title : ''}`;
+    // Banner: sample graphs say so; other graphs show their badge / notice / note (e.g. a pilot whose
+    // ratings are proposals). meta.badge, meta.notice and meta.notice_link come from graph.yaml or --meta.
+    const badge = $('data-badge'), note = $('data-note');
     if (G.meta.sample) {
-      $('sample-badge').hidden = false;
-      $('sample-badge').title = G.meta.note || 'Sample data';
-      $('sample-note').hidden = false;
-      $('sample-note').innerHTML = `<b>SAMPLE DATA.</b> ${esc(G.meta.note || 'Illustrative graph; q and a values are sample placeholders.')}`;
+      badge.hidden = false; badge.textContent = 'SAMPLE DATA';
+      badge.title = G.meta.note || 'Sample data';
+      note.hidden = false;
+      note.innerHTML = `<b>SAMPLE DATA.</b> ${esc(G.meta.note || 'Illustrative graph; q and a values are sample placeholders.')}`;
+    } else if (G.meta.badge || G.meta.notice || G.meta.note) {
+      const cls = G.meta.proposal ? 'proposal' : '';
+      if (G.meta.badge) { badge.hidden = false; badge.textContent = G.meta.badge; badge.title = G.meta.notice || G.meta.note || ''; badge.className = `data-badge ${cls}`; }
+      note.hidden = false; note.className = `data-note ${cls}`;
+      const more = G.meta.notice_link ? ` <a href="${esc(G.meta.notice_link)}" target="_blank" rel="noopener">${esc(G.meta.notice_link_label || 'Details')}</a>` : '';
+      note.innerHTML = G.meta.notice ? `${esc(G.meta.notice)}${more}` : `${esc(G.meta.note)}${more}`;
     }
     for (const v of G.versions) { const o = document.createElement('option'); o.value = v.id; o.textContent = v.title; $('version').appendChild(o); }
 
@@ -205,7 +222,7 @@
     const tip = $('tooltip');
     cy.on('mouseover', 'node', (e) => {
       const n = byId.get(e.target.id());
-      tip.innerHTML = `<b>${esc(n.title)}</b><br>${esc(n.type)}${n.status ? ' · ' + esc(n.status) : ''}${n.tag ? ' · ' + esc(n.tag) : ''}<br>h = ${fmt(n.h)}${n.type === 'answer' && n.parents.length ? ` <span style="opacity:.7">(q ${fmt(n.q)}, a ${fmt(n.a)})</span>` : ''}${n.sample || G.meta.sample ? ' <span style="opacity:.7">· sample</span>' : ''}`;
+      tip.innerHTML = `<b>${esc(n.title)}</b><br>${esc(n.type)}${n.status ? ' · ' + esc(n.status) : ''}${n.tag ? ' · ' + esc(n.tag) : ''}<br>h = ${fmt(n.h)}${n.type === 'answer' && n.parents.length ? ` <span style="opacity:.7">(q ${fmt(n.q)}, a ${fmt(n.a)})</span>` : ''}${n.sample || G.meta.sample ? ' <span style="opacity:.7">· sample</span>' : G.meta.proposal ? ' <span style="opacity:.7">· proposal</span>' : ''}`;
       tip.hidden = false;
       document.body.style.cursor = 'pointer';
     });

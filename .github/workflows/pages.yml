@@ -1,22 +1,29 @@
 name: Build and deploy to GitHub Pages
 
 # Builds site/data/graph.json and publishes site/ to Pages.
-# By default the graph is the SAMPLE in sample/question-graph/.
-# To show a real question graph, set repository variables (Settings > Secrets and
-# variables > Actions > Variables), or pass the same values to a manual run:
-#   GRAPH_REPO  e.g. nous-clawds4/physics
-#   GRAPH_PATH  e.g. public-papers/observer-space-framework/question-graph
-#   GRAPH_REF   e.g. main (optional)
-# The sample then stays available at ?graph=data/sample.json.
+#
+# The live graph is the PHYSICS PILOT: the workflow checks out nous-clawds4/physics
+# (public) and builds from public-papers/observer-space-framework/question-graph on main,
+# so every run picks up the current state of the graph. The sample in sample/question-graph
+# is built too and stays available at ?graph=data/sample.json (and is what `npm test` checks).
+#
+# Triggers: push to main; a daily schedule; manual runs (Actions > Run workflow), which can
+# point at another repo / folder / ref, or at `sample`; and repository_dispatch of type
+# question-graph-updated (an optional client_payload.ref picks the ref).
+#
+# Defaults can also be overridden with repository variables GRAPH_REPO, GRAPH_PATH, GRAPH_REF
+# and GRAPH_META (Settings > Secrets and variables > Actions > Variables).
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '17 9 * * *'   # daily, 09:17 UTC
   workflow_dispatch:
     inputs:
-      graph_repo: { description: 'Source repo (OWNER/REPO); empty = sample', required: false, default: '' }
-      graph_path: { description: 'Path of the question-graph/ folder in that repo', required: false, default: '' }
-      graph_ref: { description: 'Branch, tag or SHA', required: false, default: '' }
+      graph_repo: { description: 'Source repo (OWNER/REPO), or "sample" for the sample graph; empty = nous-clawds4/physics', required: false, default: '' }
+      graph_path: { description: 'Path of the question-graph/ folder in that repo; empty = the physics pilot folder', required: false, default: '' }
+      graph_ref: { description: 'Branch, tag or SHA; empty = main', required: false, default: '' }
   repository_dispatch:
     types: [question-graph-updated]
 
@@ -33,9 +40,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GRAPH_REPO: ${{ inputs.graph_repo || vars.GRAPH_REPO }}
-      GRAPH_PATH: ${{ inputs.graph_path || vars.GRAPH_PATH }}
-      GRAPH_REF: ${{ inputs.graph_ref || vars.GRAPH_REF }}
+      GRAPH_REPO: ${{ inputs.graph_repo || vars.GRAPH_REPO || 'nous-clawds4/physics' }}
+      GRAPH_PATH: ${{ inputs.graph_path || vars.GRAPH_PATH || 'public-papers/observer-space-framework/question-graph' }}
+      GRAPH_REF: ${{ inputs.graph_ref || github.event.client_payload.ref || vars.GRAPH_REF || 'main' }}
+      # Banner overlay (badge / notice); only applied to the default physics pilot source.
+      GRAPH_META: ${{ vars.GRAPH_META || 'config/physics-pilot.yaml' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -46,21 +55,26 @@ jobs:
       - run: npm test
       - name: Build sample graph
         run: |
-          node build/build.mjs --in sample/question-graph --out site/data/sample.json
+          node build/build.mjs --in sample/question-graph --out site/data/sample.json --strict
           cp site/data/sample.json site/data/graph.json
-      - name: Check out real question graph
-        if: env.GRAPH_REPO != ''
+      - name: Check out question graph source
+        if: env.GRAPH_REPO != 'sample'
         uses: actions/checkout@v7
         with:
           repository: ${{ env.GRAPH_REPO }}
           ref: ${{ env.GRAPH_REF }}
           path: graph-src
-          fetch-depth: 0
-      - name: Build real graph
-        if: env.GRAPH_REPO != ''
+          fetch-depth: 0   # full history, for the per-node git history in the panel
+      - name: Build question graph (0 errors required)
+        if: env.GRAPH_REPO != 'sample'
         run: |
+          META=()
+          if [ "$GRAPH_REPO" = nous-clawds4/physics ] && [ "$GRAPH_PATH" = public-papers/observer-space-framework/question-graph ] && [ -f "$GRAPH_META" ]; then
+            META=(--meta-file "$GRAPH_META")
+          fi
           node build/build.mjs --in "graph-src/${GRAPH_PATH}" --out site/data/graph.json \
-            --git --repo-url "https://github.com/${GRAPH_REPO}"
+            --git --repo-url "https://github.com/${GRAPH_REPO}" "${META[@]}"
+          node -e "const g=require('./site/data/graph.json'); console.log('graph.json:', g.nodes.length, 'nodes,', g.nodes.reduce((s,n)=>s+n.parents.length,0), 'edges,', g.versions.length, 'versions, source', g.meta.source_commit)"
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

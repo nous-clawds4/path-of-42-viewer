@@ -3,6 +3,8 @@
 //
 //   node build/build.mjs --in <question-graph dir> --out site/data/graph.json
 //        [--repo-url https://github.com/OWNER/REPO] [--git] [--strict]
+//        [--meta-file overlay.yaml] [--meta key=value ...]
+//        (set or override graph metadata such as badge / notice; --meta wins over the file)
 //
 // Node files: *.yaml / *.yml (one node per file), or *.md with YAML frontmatter
 // (the markdown body becomes `synopsis` if none is given). Schema: see README.
@@ -20,7 +22,7 @@ const TAG_ALIASES = { principle: 'method', 'methodological-principle': 'method',
 const META_FILES = ['graph.yaml', 'graph.yml', '_graph.yaml', '_graph.yml'];
 
 function parseArgs(argv) {
-  const o = { in: null, out: 'site/data/graph.json', repoUrl: null, git: false, strict: false };
+  const o = { in: null, out: 'site/data/graph.json', repoUrl: null, git: false, strict: false, meta: {} };
   for (let i = 2; i < argv.length; i++) {
     const k = argv[i];
     if (k === '--in') o.in = argv[++i];
@@ -28,7 +30,19 @@ function parseArgs(argv) {
     else if (k === '--repo-url') o.repoUrl = argv[++i];
     else if (k === '--git') o.git = true;
     else if (k === '--strict') o.strict = true;
-    else if (k === '-h' || k === '--help') { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('\n').slice(1, 12).join('\n')); process.exit(0); }
+    else if (k === '--meta-file') {
+      const f = argv[++i];
+      const d = yaml.load(fs.readFileSync(f, 'utf8')) || {};
+      if (typeof d !== 'object' || Array.isArray(d)) throw new Error(`${f}: expected a mapping`);
+      o.meta = { ...d, ...o.meta };
+    }
+    else if (k === '--meta') {
+      const kv = argv[++i] ?? '', eq = kv.indexOf('=');
+      if (eq < 1) throw new Error(`--meta expects key=value (got ${JSON.stringify(kv)})`);
+      const v = kv.slice(eq + 1);
+      o.meta[kv.slice(0, eq)] = /^(true|false|null|-?\d+(\.\d+)?)$/.test(v) ? yaml.load(v) : v;
+    }
+    else if (k === '-h' || k === '--help') { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('\n').slice(1, 14).join('\n')); process.exit(0); }
     else throw new Error(`unknown argument ${k}`);
   }
   if (!o.in) throw new Error('--in <dir> is required');
@@ -89,11 +103,11 @@ function main() {
   const errors = [], warnings = [];
   const err = (m) => errors.push(m), warn = (m) => warnings.push(m);
 
-  let meta = {};
+  let meta = { ...opt.meta };
   const nodes = new Map(), versions = [];
   for (const file of walk(inDir)) {
     const rel = path.relative(inDir, file).split(path.sep).join('/');
-    if (META_FILES.includes(rel)) { meta = yaml.load(fs.readFileSync(file, 'utf8')) || {}; continue; }
+    if (META_FILES.includes(rel)) { meta = { ...(yaml.load(fs.readFileSync(file, 'utf8')) || {}), ...opt.meta }; continue; }
     let d;
     try { d = readDoc(file); } catch (e) { err(`${rel}: YAML parse error: ${e.message.split('\n')[0]}`); continue; }
     if (d == null) continue;
@@ -204,13 +218,14 @@ function main() {
 
   // Link each node to its file on GitHub when the folder is a git checkout of a known repo.
   const repoUrl = opt.repoUrl || meta.repo_url;
-  if (repoUrl && !meta.source_base_url) {
+  if (repoUrl) {
     try {
       const git = (...a) => execFileSync('git', a, { cwd: inDir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
       const sha = git('rev-parse', 'HEAD');
       const prefix = git('rev-parse', '--show-prefix');
-      meta.source_base_url = `${repoUrl.replace(/\/$/, '')}/blob/${sha}/${prefix}`;
-      meta.source_commit = sha;
+      if (!meta.source_base_url) meta.source_base_url = `${repoUrl.replace(/\/$/, '')}/blob/${sha}/${prefix}`;
+      meta.source_commit = sha; // which commit of the source the graph was built from
+      meta.source_commit_url = `${repoUrl.replace(/\/$/, '')}/commit/${sha}`;
     } catch { /* not a git checkout */ }
   }
 
